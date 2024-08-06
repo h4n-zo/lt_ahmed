@@ -13,6 +13,8 @@ public class Character
 
 public class CharacterSelector : MonoBehaviour
 {
+    public GameObject characterParent;
+
     public Character[] characters;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
@@ -21,6 +23,24 @@ public class CharacterSelector : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private float minSwipeDistance = 50f;
+
+
+    // Rotation speeds for each axis
+    private float rotationSpeedX = 0f;
+    //private float rotationSpeedY = 49.5f;
+    private float rotationSpeedY = 75f;
+    private float rotationSpeedZ = 0f;
+
+    void RotateCharacter(GameObject _characterParent)
+    {
+        // Calculate rotation for each frame
+        float rotationX = rotationSpeedX * Time.deltaTime;
+        float rotationY = rotationSpeedY * Time.deltaTime;
+        float rotationZ = rotationSpeedZ * Time.deltaTime;
+
+        // Apply rotation to the object
+        _characterParent.transform.Rotate(rotationX, rotationY, rotationZ);
+    }
 
     void Start()
     {
@@ -66,6 +86,8 @@ public class CharacterSelector : MonoBehaviour
     void Update()
     {
         HandleSwipe();
+        RotateCharacter(characterParent);
+
     }
 
     public void OnRightButton()
@@ -192,11 +214,11 @@ public class CharacterSelector : MonoBehaviour
             {
                 if (swipeDirection.x > 0)
                 {
-                    OnRightButton();
+                    OnLeftButton();
                 }
                 else
                 {
-                    OnLeftButton();
+                    OnRightButton();
                 }
             }
         }
