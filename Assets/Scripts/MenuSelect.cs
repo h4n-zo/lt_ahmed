@@ -26,12 +26,12 @@ public class MenuSelect : MonoBehaviour
         HandleSwipe();
     }
 
-    public void TriggerSelect()
+    public void TriggerCharacterSelect()
     {
         _triggerSelect?.Invoke();
     }
     
-    public void TriggerUnselect()
+    public void TriggerCharacterUnselect()
     {
         _triggerUnselect?.Invoke();
     }
