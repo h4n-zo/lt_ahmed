@@ -1,0 +1,15 @@
+newmtl Fade_15291f7c-b9bf-47ce-92f7-255ed61be727
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Fade_baseColor.jpg
+newmtl Fade_back_460ac5f6-a6e4-4f42-8200-6d2061354847
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd Fade_back_baseColor.jpg
+newmtl blinn1SG_7a9a66b7-fb50-4a2a-8fe4-21e8033bd2cf
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd blinn1SG_baseColor.jpg
+newmtl Fing_46fee6e4-4074-4288-a002-0e6b9f4c26d6
+Kd 0.101 0.101 0.101
+d 1.000

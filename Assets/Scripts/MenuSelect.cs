@@ -1,6 +1,7 @@
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class MenuSelect : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class MenuSelect : MonoBehaviour
     public UnityEvent _triggerSelect;
     public UnityEvent _triggerUnselect;
 
+    [Header("Shop Select Functionality")]
+    public UnityEvent _triggerShopSelect;
+    public UnityEvent _triggerShopUnselect;
+
     void Start()
     {
         UpdateCamera();
@@ -26,15 +31,43 @@ public class MenuSelect : MonoBehaviour
         HandleSwipe();
     }
 
+    public void Play()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    #region Character Select Methods
     public void TriggerCharacterSelect()
     {
         _triggerSelect?.Invoke();
     }
-    
+
     public void TriggerCharacterUnselect()
     {
         _triggerUnselect?.Invoke();
     }
+    #endregion
+
+    #region Shop Select Methods
+    public void TriggerShopSelect()
+    {
+        _triggerShopSelect?.Invoke();
+    }
+
+    public void TriggerShopUnselect()
+    {
+        _triggerShopUnselect?.Invoke();
+    }
+
+    #endregion
+
+
+
 
     public void OnRightButton()
     {

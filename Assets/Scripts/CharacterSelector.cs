@@ -24,6 +24,13 @@ public class CharacterSelector : MonoBehaviour
     private Vector2 endTouchPosition;
     private float minSwipeDistance = 50f;
 
+    //Shop Variables
+    public TextMeshProUGUI currencyText;
+    public GameObject purchaseButton;
+    public GameObject selectButton;
+
+    private bool[] purchasedCharacters;
+
 
     // Rotation speeds for each axis
     private float rotationSpeedX = 0f;
@@ -78,9 +85,30 @@ public class CharacterSelector : MonoBehaviour
             }
         }
 
+
+
+        // Load purchased characters from PlayerPrefs
+        LoadPurchasedCharacters();
+
+        // Ensure the first character is always unlocked
+        purchasedCharacters[0] = true;
+
+        UpdateCurrencyDisplay(CurrencyManager.Instance.CurrentCurrency);
+
+        UpdatePurchaseUI();
+
+        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyDisplay;
+
+
+
         // Enable the first character and their extra items, and update UI texts
         EnableCharacter(0);
         UpdateUI(0);
+    }
+
+    void OnDestroy()
+    {
+        CurrencyManager.Instance.OnCurrencyChanged -= UpdateCurrencyDisplay;
     }
 
     void Update()
@@ -101,6 +129,8 @@ public class CharacterSelector : MonoBehaviour
         currentIndex = (currentIndex - 1 + characters.Length) % characters.Length;
         UpdateCharacter();
     }
+
+
 
     void UpdateCharacter()
     {
@@ -127,7 +157,62 @@ public class CharacterSelector : MonoBehaviour
         // Enable the current character and their extra items, and update UI texts
         EnableCharacter(currentIndex);
         UpdateUI(currentIndex);
+        UpdatePurchaseUI();
     }
+
+    void UpdatePurchaseUI()
+    {
+        bool isPurchased = purchasedCharacters[currentIndex];
+        purchaseButton.SetActive(!isPurchased);
+        selectButton.SetActive(isPurchased);
+    }
+
+    void UpdateCurrencyDisplay(int newAmount)
+    {
+        if (currencyText != null)
+        {
+            currencyText.text = $"{newAmount}";
+        }
+    }
+
+    private void LoadPurchasedCharacters()
+    {
+        purchasedCharacters = new bool[characters.Length];
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            // Load the purchase status from PlayerPrefs
+            purchasedCharacters[i] = PlayerPrefs.GetInt($"CharacterPurchased_{i}", i == 0 ? 1 : 0) == 1;
+        }
+    }
+
+    private void SavePurchasedCharacters()
+    {
+        for (int i = 0; i < characters.Length; i++)
+        {
+            PlayerPrefs.SetInt($"CharacterPurchased_{i}", purchasedCharacters[i] ? 1 : 0);
+        }
+        PlayerPrefs.Save();
+    }
+
+    public void OnPurchaseButton()
+    {
+        Character currentCharacter = characters[currentIndex];
+        if (CurrencyManager.Instance.TryPurchase(currentCharacter.price))
+        {
+            purchasedCharacters[currentIndex] = true;
+            SavePurchasedCharacters(); // Save the purchased status
+
+            Debug.Log($"Purchased character: {currentCharacter.name}");
+            UpdatePurchaseUI();
+        }
+        else
+        {
+            Debug.Log("Not enough currency to purchase this character.");
+        }
+    }
+
+
 
     void EnableCharacter(int index)
     {
@@ -146,6 +231,21 @@ public class CharacterSelector : MonoBehaviour
                 }
             }
         }
+    }
+
+
+
+    public void SaveSelectedCharacter()
+    {
+        PlayerPrefs.SetInt("SelectedCharacterIndex", currentIndex);
+        PlayerPrefs.Save();
+        Debug.Log($"Saved character index: {currentIndex}");
+    }
+
+    // Add this method to be called when you want to save the character
+    public void OnSaveButton()
+    {
+        SaveSelectedCharacter();
     }
 
     void UpdateUI(int index)
