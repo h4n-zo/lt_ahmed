@@ -18,10 +18,16 @@ public class WeaponSelector : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
     public TextMeshProUGUI aliasText; // Added TextMeshProUGUI for alias
+    public TextMeshProUGUI currencyText; // Added TextMeshProUGUI for currency display
+    public GameObject purchaseButton;
+    public GameObject selectButton;
+
     private int currentIndex = 0;
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private float minSwipeDistance = 50f;
+
+    private bool[] purchasedWeapons;
 
     // Rotation speeds for each axis
     private float rotationSpeedX = 0f;
@@ -39,9 +45,27 @@ public class WeaponSelector : MonoBehaviour
         // Disable all weapons
         DisableAllWeapons();
 
+        // Load purchased weapons from PlayerPrefs
+        LoadPurchasedWeapons();
+
+        // Ensure the first weapon is always unlocked
+        purchasedWeapons[0] = true;
+
+        UpdateCurrencyDisplay(CurrencyManager.Instance.CurrentCurrency);
+        UpdatePurchaseUI();
+
         // Enable the first weapon and update UI texts
         EnableWeapon(0);
         UpdateUI(0);
+
+        // Subscribe to currency changes
+        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyDisplay;
+    }
+
+    void OnDestroy()
+    {
+        // Unsubscribe from currency changes
+        CurrencyManager.Instance.OnCurrencyChanged -= UpdateCurrencyDisplay;
     }
 
     void Update()
@@ -53,12 +77,14 @@ public class WeaponSelector : MonoBehaviour
     {
         currentIndex = (currentIndex + 1) % weapons.Length;
         UpdateWeapon();
+        // SaveSelectedWeapon(); // Save the selected weapon index
     }
 
     public void OnLeftButton()
     {
         currentIndex = (currentIndex - 1 + weapons.Length) % weapons.Length;
         UpdateWeapon();
+        // SaveSelectedWeapon(); // Save the selected weapon index
     }
 
     void UpdateWeapon()
@@ -68,6 +94,7 @@ public class WeaponSelector : MonoBehaviour
         // Enable the current weapon and update UI texts
         EnableWeapon(currentIndex);
         UpdateUI(currentIndex);
+        UpdatePurchaseUI();
     }
 
     void DisableAllWeapons()
@@ -121,6 +148,68 @@ public class WeaponSelector : MonoBehaviour
         }
     }
 
+    void UpdatePurchaseUI()
+    {
+        bool isPurchased = purchasedWeapons[currentIndex];
+        purchaseButton.SetActive(!isPurchased);
+        selectButton.SetActive(isPurchased);
+    }
+
+    void UpdateCurrencyDisplay(int newAmount)
+    {
+        if (currencyText != null)
+        {
+            currencyText.text = $"{newAmount}";
+        }
+    }
+
+    private void LoadPurchasedWeapons()
+    {
+        purchasedWeapons = new bool[weapons.Length];
+
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            // Load the purchase status from PlayerPrefs
+            purchasedWeapons[i] = PlayerPrefs.GetInt($"WeaponPurchased_{i}", i == 0 ? 1 : 0) == 1;
+        }
+    }
+
+    private void SavePurchasedWeapons()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            PlayerPrefs.SetInt($"WeaponPurchased_{i}", purchasedWeapons[i] ? 1 : 0);
+        }
+        PlayerPrefs.Save();
+    }
+
+    public void SaveSelectedWeapon()
+    {
+        PlayerPrefs.SetInt("SelectedWeaponIndex", currentIndex);
+        PlayerPrefs.Save();
+        Debug.Log($"Saved selected weapon index: {currentIndex}");
+    }
+
+    public void OnPurchaseButton()
+    {
+        WeaponDetails currentWeapon = weapons[currentIndex];
+        if (CurrencyManager.Instance.TryPurchase(currentWeapon.price))
+        {
+            purchasedWeapons[currentIndex] = true;
+            SavePurchasedWeapons(); // Save the purchased status
+
+            // Update currency display after successful purchase
+            UpdateCurrencyDisplay(CurrencyManager.Instance.CurrentCurrency);
+
+            Debug.Log($"Purchased weapon: {currentWeapon.name}");
+            UpdatePurchaseUI();
+        }
+        else
+        {
+            Debug.Log("Not enough currency to purchase this weapon.");
+        }
+    }
+
     void HandleSwipe()
     {
         if (Input.touchCount > 0)
@@ -164,5 +253,16 @@ public class WeaponSelector : MonoBehaviour
                 }
             }
         }
+    }
+
+    void RotateWeapon(GameObject _weaponParent)
+    {
+        // Calculate rotation for each frame
+        float rotationX = rotationSpeedX * Time.deltaTime;
+        float rotationY = rotationSpeedY * Time.deltaTime;
+        float rotationZ = rotationSpeedZ * Time.deltaTime;
+
+        // Apply rotation to the object
+        _weaponParent.transform.Rotate(rotationX, rotationY, rotationZ);
     }
 }
