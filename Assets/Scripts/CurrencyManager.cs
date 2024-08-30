@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement; // For handling scene changes
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -12,12 +13,10 @@ public class CurrencyManager : MonoBehaviour
     public delegate void CurrencyChangedDelegate(int newAmount);
     public event CurrencyChangedDelegate OnCurrencyChanged;
 
-    [SerializeField] TextMeshProUGUI currencyText;
+    [SerializeField] private TextMeshProUGUI currencyText;
 
     private void Awake()
     {
-        // PlayerPrefs.DeleteAll();
-
         if (Instance == null)
         {
             Instance = this;
@@ -29,9 +28,39 @@ public class CurrencyManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        currencyText.text = CurrentCurrency.ToString();
+        ReassignUIElements();
+        UpdateCurrencyDisplay(CurrentCurrency);
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded; // Register to sceneLoaded event
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded; // Unregister to avoid memory leaks
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ReassignUIElements(); // Reassign UI elements after scene load
+        UpdateCurrencyDisplay(CurrentCurrency);
+    }
+
+    private void ReassignUIElements()
+    {
+        // Reassign the TextMeshProUGUI object, if it has been lost
+        if (SceneManager.GetActiveScene().name == "Game_Menu")
+        {
+
+
+            if (currencyText == null)
+            {
+                currencyText = GameObject.Find("currencyText").GetComponent<TextMeshProUGUI>();
+            }
+        }
+    }
 
     private void LoadCurrency()
     {
@@ -46,6 +75,7 @@ public class CurrencyManager : MonoBehaviour
             PlayerPrefs.SetInt(CURRENCY_KEY, CurrentCurrency);
             PlayerPrefs.Save();
             OnCurrencyChanged?.Invoke(CurrentCurrency);
+            UpdateCurrencyDisplay(CurrentCurrency);
             return true;
         }
         return false;
@@ -57,14 +87,14 @@ public class CurrencyManager : MonoBehaviour
         PlayerPrefs.SetInt(CURRENCY_KEY, CurrentCurrency);
         PlayerPrefs.Save();
         OnCurrencyChanged?.Invoke(CurrentCurrency);
+        UpdateCurrencyDisplay(CurrentCurrency);
     }
 
-    void UpdateCurrencyDisplay(int newAmount)
+    private void UpdateCurrencyDisplay(int newAmount)
     {
         if (currencyText != null)
         {
             currencyText.text = $"{newAmount}";
         }
     }
-
 }

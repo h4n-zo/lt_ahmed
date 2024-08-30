@@ -50,6 +50,8 @@ public class PlayerScript : MonoBehaviour
         angularSpeed = agent.angularSpeed;
         acceleration = agent.acceleration;
 
+         AdsManager.Instance.LoadBanner();
+
     }
 
     void Update()

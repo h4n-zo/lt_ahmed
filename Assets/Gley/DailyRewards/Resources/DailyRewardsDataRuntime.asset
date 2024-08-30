@@ -15,11 +15,11 @@ MonoBehaviour:
   allTimerButtons:
   - buttonID: RewardButton
     hours: 0
-    minutes: 0
-    seconds: 30
+    minutes: 30
+    seconds: 0
     interactable: 0
-    availableAtStart: 1
-    completeText: Done
+    availableAtStart: 0
+    completeText: 
   calendarPrefab: {fileID: 1869782733140482, guid: de2046ad0284858438d0fa15bfdb6e31,
     type: 3}
   calendarCanvas: {fileID: 1072201933520926, guid: f0fb663a072a5c345bb1a5426202ac18,

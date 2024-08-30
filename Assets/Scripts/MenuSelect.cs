@@ -24,6 +24,7 @@ public class MenuSelect : MonoBehaviour
     void Start()
     {
         UpdateCamera();
+        Time.timeScale = 1f;
     }
 
     void Update()

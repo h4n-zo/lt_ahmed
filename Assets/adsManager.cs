@@ -2,31 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class adsManager : MonoBehaviour
+public class AdsManager : MonoBehaviour
 {
+    public static AdsManager Instance { get; private set; }
+
 #if UNITY_ANDROID
     string appKey = "1f747a94d";
 #elif UNITY_IPHONE
-        string appKey = "1f747a94d";
+    string appKey = "1f747a94d";
 #else
-        string appKey = "unexpected_platform";
+    string appKey = "unexpected_platform";
 #endif
 
+    public Button showInterstitialButton; // Assign these in the inspector
+    public Button loadBannerButton; // Assign these in the inspector
 
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject); // Persist across scenes
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         IronSource.Agent.validateIntegration();
         IronSource.Agent.init(appKey);
+        LoadInterstitial();
+
+        // ReassignButtonListeners();
     }
+
 
     void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+
         IronSourceEvents.onSdkInitializationCompletedEvent += SDKInitialized;
 
-        //Add AdInfo Banner Events
+        // Add AdInfo Banner Events
         IronSourceBannerEvents.onAdLoadedEvent += BannerOnAdLoadedEvent;
         IronSourceBannerEvents.onAdLoadFailedEvent += BannerOnAdLoadFailedEvent;
         IronSourceBannerEvents.onAdClickedEvent += BannerOnAdClickedEvent;
@@ -34,7 +59,7 @@ public class adsManager : MonoBehaviour
         IronSourceBannerEvents.onAdScreenDismissedEvent += BannerOnAdScreenDismissedEvent;
         IronSourceBannerEvents.onAdLeftApplicationEvent += BannerOnAdLeftApplicationEvent;
 
-        //Add AdInfo Interstitial Events
+        // Add AdInfo Interstitial Events
         IronSourceInterstitialEvents.onAdReadyEvent += InterstitialOnAdReadyEvent;
         IronSourceInterstitialEvents.onAdLoadFailedEvent += InterstitialOnAdLoadFailed;
         IronSourceInterstitialEvents.onAdOpenedEvent += InterstitialOnAdOpenedEvent;
@@ -42,11 +67,77 @@ public class adsManager : MonoBehaviour
         IronSourceInterstitialEvents.onAdShowSucceededEvent += InterstitialOnAdShowSucceededEvent;
         IronSourceInterstitialEvents.onAdShowFailedEvent += InterstitialOnAdShowFailedEvent;
         IronSourceInterstitialEvents.onAdClosedEvent += InterstitialOnAdClosedEvent;
+
     }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        // Unsubscribe from events
+        IronSourceEvents.onSdkInitializationCompletedEvent -= SDKInitialized;
+
+        IronSourceBannerEvents.onAdLoadedEvent -= BannerOnAdLoadedEvent;
+        IronSourceBannerEvents.onAdLoadFailedEvent -= BannerOnAdLoadFailedEvent;
+        IronSourceBannerEvents.onAdClickedEvent -= BannerOnAdClickedEvent;
+        IronSourceBannerEvents.onAdScreenPresentedEvent -= BannerOnAdScreenPresentedEvent;
+        IronSourceBannerEvents.onAdScreenDismissedEvent -= BannerOnAdScreenDismissedEvent;
+        IronSourceBannerEvents.onAdLeftApplicationEvent -= BannerOnAdLeftApplicationEvent;
+
+        IronSourceInterstitialEvents.onAdReadyEvent -= InterstitialOnAdReadyEvent;
+        IronSourceInterstitialEvents.onAdLoadFailedEvent -= InterstitialOnAdLoadFailed;
+        IronSourceInterstitialEvents.onAdOpenedEvent -= InterstitialOnAdOpenedEvent;
+        IronSourceInterstitialEvents.onAdClickedEvent -= InterstitialOnAdClickedEvent;
+        IronSourceInterstitialEvents.onAdShowSucceededEvent -= InterstitialOnAdShowSucceededEvent;
+        IronSourceInterstitialEvents.onAdShowFailedEvent -= InterstitialOnAdShowFailedEvent;
+        IronSourceInterstitialEvents.onAdClosedEvent -= InterstitialOnAdClosedEvent;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // ReassignButtonListeners(); // Reassign button listeners after scene load
+        StartCoroutine(EnableADS(3.5f));
+
+    }
+
+    IEnumerator EnableADS(float t)
+    {
+        yield return new WaitForSeconds(t);
+        if (SceneManager.GetActiveScene().name == "Game_Menu")
+        {
+            LoadBanner();
+            Debug.Log("EnableADS() is called");
+        }
+
+    }
+
+    // private void ReassignButtonListeners()
+    // {
+    //     if (SceneManager.GetActiveScene().name == "Game_Menu")
+    //     {
+    //         // Reassign buttons if they lose their references
+    //         if (showInterstitialButton == null || loadBannerButton == null)
+    //         {
+    //             showInterstitialButton = GameObject.Find("CreditsContainer")?.GetComponent<Button>();
+    //             loadBannerButton = GameObject.Find("SettingsContainer")?.GetComponent<Button>();
+    //         }
+
+    //         if (showInterstitialButton != null)
+    //         {
+    //             showInterstitialButton.onClick.AddListener(ShowInterstitial);
+    //         }
+
+    //         if (loadBannerButton != null)
+    //         {
+    //             loadBannerButton.onClick.AddListener(LoadBanner);
+    //         }
+    //     }
+
+    // }
 
     void SDKInitialized()
     {
-        print("Sdk is initialized!!");
+        Debug.Log("Sdk is initialized!!");
     }
 
     void OnApplicationPause(bool pause)
@@ -54,47 +145,47 @@ public class adsManager : MonoBehaviour
         IronSource.Agent.onApplicationPause(pause);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     #region Banner
     public void LoadBanner()
     {
+        Debug.Log("Clicked Banner");
         IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.BOTTOM);
     }
+
     public void DestroyBanner()
     {
         IronSource.Agent.destroyBanner();
     }
 
-
-    /************* Banner AdInfo Delegates *************/
-    //Invoked once the banner has loaded
+    // Banner AdInfo Delegates
     void BannerOnAdLoadedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Banner loaded successfully.");
     }
-    //Invoked when the banner loading process has failed.
+
     void BannerOnAdLoadFailedEvent(IronSourceError ironSourceError)
     {
+        Debug.LogError($"Banner failed to load: {ironSourceError.getDescription()}");
     }
-    // Invoked when end user clicks on the banner ad
+
     void BannerOnAdClickedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Banner clicked.");
     }
-    //Notifies the presentation of a full screen content following user click
+
     void BannerOnAdScreenPresentedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Banner screen presented.");
     }
-    //Notifies the presented screen has been dismissed
+
     void BannerOnAdScreenDismissedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Banner screen dismissed.");
     }
-    //Invoked when the user leaves the app
+
     void BannerOnAdLeftApplicationEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("User left the app after clicking the banner.");
     }
     #endregion
 
@@ -107,48 +198,52 @@ public class adsManager : MonoBehaviour
 
     public void ShowInterstitial()
     {
+        Debug.Log("Clicked Interstitial");
         if (IronSource.Agent.isInterstitialReady())
         {
             IronSource.Agent.showInterstitial();
         }
         else
         {
-            print("Interstitial not ready!");
+            Debug.Log("Interstitial not ready!");
             LoadInterstitial();
         }
-
     }
 
-    /************* Interstitial AdInfo Delegates *************/
-    // Invoked when the interstitial ad was loaded succesfully.
+    // Interstitial AdInfo Delegates
     void InterstitialOnAdReadyEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Interstitial ad ready.");
     }
-    // Invoked when the initialization process has failed.
+
     void InterstitialOnAdLoadFailed(IronSourceError ironSourceError)
     {
+        Debug.LogError($"Interstitial failed to load: {ironSourceError.getDescription()}");
     }
-    // Invoked when the Interstitial Ad Unit has opened. This is the impression indication. 
+
     void InterstitialOnAdOpenedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Interstitial ad opened.");
     }
-    // Invoked when end user clicked on the interstitial ad
+
     void InterstitialOnAdClickedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Interstitial ad clicked.");
     }
-    // Invoked when the ad failed to show.
+
     void InterstitialOnAdShowFailedEvent(IronSourceError ironSourceError, IronSourceAdInfo adInfo)
     {
+        Debug.LogError($"Interstitial failed to show: {ironSourceError.getDescription()}");
     }
-    // Invoked when the interstitial ad closed and the user went back to the application screen.
+
     void InterstitialOnAdClosedEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Interstitial ad closed.");
     }
-    // Invoked before the interstitial ad was opened, and before the InterstitialOnAdOpenedEvent is reported.
-    // This callback is not supported by all networks, and we recommend using it only if  
-    // it's supported by all networks you included in your build. 
+
     void InterstitialOnAdShowSucceededEvent(IronSourceAdInfo adInfo)
     {
+        Debug.Log("Interstitial ad show succeeded.");
     }
 
     #endregion

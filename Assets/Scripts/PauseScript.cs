@@ -79,7 +79,7 @@ public class PauseScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(t);
 
         Time.timeScale = 0;
-        Gley.MobileAds.API.ShowInterstitial();
+         AdsManager.Instance.ShowInterstitial();
     }
 
     IEnumerator ResumePause(float t)
@@ -122,7 +122,8 @@ public class PauseScript : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Game_Menu");
+        AdsManager.Instance.LoadInterstitial();
     }
 
 }
