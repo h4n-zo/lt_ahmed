@@ -21,6 +21,10 @@ public class MenuSelect : MonoBehaviour
     public UnityEvent _triggerShopSelect;
     public UnityEvent _triggerShopUnselect;
 
+    [Header("Mission Select Functionality")]
+    public UnityEvent _triggerMissionSelect;
+    public UnityEvent _triggerMissionUnselect;
+
     void Start()
     {
         UpdateCamera();
@@ -63,6 +67,19 @@ public class MenuSelect : MonoBehaviour
     public void TriggerShopUnselect()
     {
         _triggerShopUnselect?.Invoke();
+    }
+
+    #endregion
+
+    #region Mission Select Methods
+    public void TriggerMissionSelect()
+    {
+        _triggerMissionSelect?.Invoke();
+    }
+
+    public void TriggerMissionUnselect()
+    {
+        _triggerMissionUnselect?.Invoke();
     }
 
     #endregion

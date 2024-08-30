@@ -289,7 +289,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 211289c2612d14a6a850525ab1c328ec, type: 3}
+      m_Icon: {fileID: 2800000, guid: f86e930ba2a9544c6bb31104fdcede49, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

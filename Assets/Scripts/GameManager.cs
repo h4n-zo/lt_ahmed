@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject missionCompleteCanvas;
     public int targetFrame = 60;
 
-    
+
     private void Start()
     {
         Time.timeScale = 1f;
@@ -30,12 +30,13 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void MissionComplete(){
-
-         missionCompleteCanvas.GetComponent<Animator>().SetBool("isOpen", true);
+    public void MissionComplete()
+    {
+        AdsManager.Instance.ShowInterstitial();
+        missionCompleteCanvas.GetComponent<Animator>().SetBool("isOpen", true);
     }
 
 }
