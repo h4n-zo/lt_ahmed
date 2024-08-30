@@ -79,6 +79,7 @@ public class PauseScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(t);
 
         Time.timeScale = 0;
+        Gley.MobileAds.API.ShowInterstitial();
     }
 
     IEnumerator ResumePause(float t)

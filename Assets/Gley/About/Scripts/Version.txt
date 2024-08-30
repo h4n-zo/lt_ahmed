@@ -1,0 +1,5 @@
+{
+    "folderName": "About",
+    "longVersion": "2.1.0",
+    "shortVersion": 3
+}

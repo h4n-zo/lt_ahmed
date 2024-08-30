@@ -1,0 +1,5 @@
+{
+    "folderName": "Jumpy",
+    "longVersion": "2.0.15",
+    "shortVersion": 215
+}

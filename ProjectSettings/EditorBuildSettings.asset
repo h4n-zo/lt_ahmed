@@ -14,16 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GENESIS OF BREATH.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WINDPIPE SURREAL.unity
     guid: f9674e921beb143cf868f3fedbda8925
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LARYNX LABYRINTH.unity
     guid: e24a72d5a1ea442ca9ec7f54542aa46b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SINUS SECRETS.unity
     guid: 87b3af0632786421686d81c89e768e86
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Voicebox Vale.unity
     guid: e2f650e3a43b04756a61b0d35d7f1e0b
   - enabled: 0
