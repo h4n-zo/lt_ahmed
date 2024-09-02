@@ -64,7 +64,7 @@ public class CurrencyManager : MonoBehaviour
 
     private void LoadCurrency()
     {
-        CurrentCurrency = PlayerPrefs.GetInt(CURRENCY_KEY, 10000); // Default starting currency
+        CurrentCurrency = PlayerPrefs.GetInt(CURRENCY_KEY, 3000); // Default starting currency
     }
 
     public bool TryPurchase(int amount)

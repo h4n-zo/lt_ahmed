@@ -67,7 +67,8 @@ public class Collectible : MonoBehaviour
             {
                 var go = Instantiate(floatingText, transform.position, Quaternion.identity);
                 go.GetComponent<TextMesh>().text = "+" + cashAmount.ToString();
-
+                CurrencyManager.Instance.AddCurrency(cashAmount);
+                
                 GetComponent<Collectible>().enabled = false;
                 cashMeshRenderer.enabled = false;
                 cashCollider.enabled = false;

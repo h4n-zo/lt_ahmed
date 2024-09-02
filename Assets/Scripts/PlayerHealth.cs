@@ -63,8 +63,11 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             topContainer.SetActive(false);
             abilityUI.SetActive(false);
-            GetComponent<PlayerScript>().enabled = false;
+
             GetComponent<NavMeshAgent>().enabled = false;
+
+            GetComponent<PlayerScript>().enabled = false;
+
             GetComponent<Animator>().SetBool("Death", true);
             StartCoroutine(StartCountdown(timer));
 

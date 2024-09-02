@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
         angularSpeed = agent.angularSpeed;
         acceleration = agent.acceleration;
 
-         AdsManager.Instance.LoadBanner();
+        AdsManager.Instance.LoadBanner();
 
     }
 
@@ -165,7 +165,7 @@ public class PlayerScript : MonoBehaviour
 
                 Quaternion targetRot = Quaternion.LookRotation(directionToEnemy);
                 transform.rotation = targetRot;
-                
+
                 AttackEnemy(distanceToEnemy, killDistance, enemy);
             }
 

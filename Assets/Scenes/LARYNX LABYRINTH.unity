@@ -18974,6 +18974,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1212662909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1212922099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212922101}
+  - component: {fileID: 1212922100}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1212922100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212922099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ba5671f7ef94c71a0435a3615bff8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1212922101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212922099}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1216657023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20065,7 +20109,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 52318dfb0cc9e422588d9aea73fd19d1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5c9ea391447f1457193462a1e5d486e6, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1307021270
 GameObject:
@@ -30108,7 +30152,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
-  m_YawDamping: 7.1
+  m_YawDamping: 20
   m_RollDamping: 0
   m_AngularDamping: 0
 --- !u!114 &1882074114
@@ -37398,7 +37442,7 @@ PrefabInstance:
     - target: {fileID: 1139813042393271558, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
         type: 3}
       propertyPath: decreaseFillSpeed
-      value: 0.09
+      value: 0.099
       objectReference: {fileID: 0}
     - target: {fileID: 1768386641049111293, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
         type: 3}
@@ -38056,3 +38100,4 @@ SceneRoots:
   - {fileID: 1881872868}
   - {fileID: 2031379465}
   - {fileID: 1123754873}
+  - {fileID: 1212922101}

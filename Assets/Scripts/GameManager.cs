@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
 
     public void MissionComplete()
     {
-        AdsManager.Instance.ShowInterstitial();
         missionCompleteCanvas.GetComponent<Animator>().SetBool("isOpen", true);
+        AdsManager.Instance.ShowInterstitial();
     }
 
 }

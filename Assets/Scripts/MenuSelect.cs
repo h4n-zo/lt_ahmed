@@ -2,9 +2,57 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
+using Hanzo.Gfx;
 
 public class MenuSelect : MonoBehaviour
 {
+    [System.Serializable]
+    public struct GfxManager
+    {
+
+        public const string QualityPrefKey = "GraphicsQuality";
+
+        public GfxSettings gfxSettings;
+
+        public void EnableGFX()
+        {
+
+            gfxSettings = GameObject.FindObjectOfType<GfxSettings>();
+            Debug.Log("GFX Assigned");
+
+        }
+
+        public float GetGraphicsQuality()
+        {
+            return PlayerPrefs.GetFloat(QualityPrefKey, 1); // Default to 1 (Low) if no saved value
+            
+        }
+
+        public void SetGraphicsQuality(float value)
+        {
+            PlayerPrefs.SetFloat(QualityPrefKey, value);
+            PlayerPrefs.Save(); // Ensure the change is written to disk
+        }
+
+        public void OnSaveButtonClick()
+        {
+            if (gfxSettings != null)
+            {
+                float currentQuality = gfxSettings.GetCurrentQuality();
+                SetGraphicsQuality(currentQuality);
+                Debug.Log("Graphics settings saved.");
+            }
+            else
+            {
+                Debug.LogError("GfxSettings instance is null.");
+            }
+        }
+    }
+
+    public GfxManager gfxManager;
+
     public CinemachineVirtualCamera[] virtualCameras;
     public GameObject[] canvasGO;
     private int currentIndex = 0; // Current camera index
@@ -12,6 +60,9 @@ public class MenuSelect : MonoBehaviour
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
     private float minSwipeDistance = 50f; // Minimum distance to be considered a swipe
+
+    private SettingsManager settingsManager;
+    public Button saveButton;
 
     [Header("Character Select Functionality")]
     public UnityEvent _triggerSelect;
@@ -25,10 +76,21 @@ public class MenuSelect : MonoBehaviour
     public UnityEvent _triggerMissionSelect;
     public UnityEvent _triggerMissionUnselect;
 
+    [Header("Credits Functionality")]
+    public UnityEvent _triggerCreditsSelect;
+    public UnityEvent _triggerCreditsUnselect;
+
+    [Header("Setings Functionality")]
+    public UnityEvent _triggerSettingsSelect;
+    public UnityEvent _triggerSettingsUnselect;
+
     void Start()
     {
+        // PlayerPrefs.DeleteAll();
+
         UpdateCamera();
         Time.timeScale = 1f;
+        gfxManager.EnableGFX();
     }
 
     void Update()
@@ -84,7 +146,34 @@ public class MenuSelect : MonoBehaviour
 
     #endregion
 
+    #region Credits Methods
+    public void TriggerCreditSelect()
+    {
+        _triggerCreditsSelect?.Invoke();
+    }
 
+    public void TriggerCreditUnselect()
+    {
+        // ResetCamera();
+        _triggerCreditsUnselect?.Invoke();
+    }
+
+    #endregion
+
+    #region Settings Methods
+    public void TriggerSettingsSelect()
+    {
+        _triggerSettingsSelect?.Invoke();
+    }
+
+    public void TriggerSettingsUnselect()
+    {
+        // ResetCamera();
+        _triggerSettingsUnselect?.Invoke();
+
+    }
+
+    #endregion
 
 
     public void OnRightButton()
@@ -109,6 +198,18 @@ public class MenuSelect : MonoBehaviour
 
     void UpdateCamera()
     {
+        for (int i = 0; i < virtualCameras.Length; i++)
+        {
+            virtualCameras[i].gameObject.SetActive(i == currentIndex);
+            canvasGO[i].gameObject.SetActive(i == currentIndex);
+        }
+    }
+
+    void ResetCamera()
+    {
+        Debug.Log("Reset Camera Called");
+        currentIndex = 0;
+
         for (int i = 0; i < virtualCameras.Length; i++)
         {
             virtualCameras[i].gameObject.SetActive(i == currentIndex);
@@ -162,4 +263,34 @@ public class MenuSelect : MonoBehaviour
             }
         }
     }
+
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        settingsManager = GameObject.FindObjectOfType<SettingsManager>();
+    }
+
+    public void SaveGFXButton()
+    {
+        gfxManager.OnSaveButtonClick();
+
+        // StartCoroutine(TimeToSaveGFx(5f));
+    }
+
+     public void AssignGFXButton()
+    {
+        // saveButton.onClick.AddListener(gfxManager.OnSaveButtonClick);
+        // Debug.Log("gfxManager.OnSaveButtonClick() is assigned");
+        // StartCoroutine(TimeToSaveGFx(5f));
+    }
+
+
+
+
+
 }

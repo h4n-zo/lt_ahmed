@@ -494,8 +494,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011460319}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0016309815, y: -0.9912702, z: 0.012317108, w: 0.13125995}
-  m_LocalPosition: {x: 0.07, y: 1.251, z: 2.197}
+  m_LocalRotation: {x: 0.0016287318, y: -0.99126554, z: 0.012296601, w: 0.13129684}
+  m_LocalPosition: {x: 0.26, y: 1.269, z: 2.901}
   m_LocalScale: {x: 0.5555555, y: 0.5555555, z: 0.5555556}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19029,8 +19029,8 @@ MonoBehaviour:
   stealthBar: {fileID: 0}
   stealthText: {fileID: 0}
   stealthButton: {fileID: 0}
-  fillSpeed: 0.04
-  decreaseFillSpeed: 0.085
+  fillSpeed: 0.045
+  decreaseFillSpeed: 0.099
   triggerSounds: []
   fillPercentage: 55
 --- !u!114 &1139813042393271558
@@ -19050,8 +19050,8 @@ MonoBehaviour:
   stealthBar: {fileID: 0}
   rampageText: {fileID: 0}
   rampageButton: {fileID: 0}
-  fillSpeed: 0.1
-  decreaseFillSpeed: 0.009
+  fillSpeed: 0.03
+  decreaseFillSpeed: 0.098
   modSpeed: 0.15
   modChaseSpeed: 0.34
   modAcceleration: 1.2

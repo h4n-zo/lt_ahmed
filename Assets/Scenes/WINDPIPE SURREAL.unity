@@ -9657,7 +9657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &249285267
 Transform:
   m_ObjectHideFlags: 0
@@ -10300,7 +10300,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 1
     gravitySource: 0
-    maxNumParticles: 12
+    maxNumParticles: 3
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -36815,6 +36815,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 260947474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &991167658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991167660}
+  - component: {fileID: 991167659}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &991167659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991167658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ba5671f7ef94c71a0435a3615bff8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &991167660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991167658}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &992795746
 GameObject:
   m_ObjectHideFlags: 0
@@ -56596,7 +56640,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 1
     gravitySource: 0
-    maxNumParticles: 12
+    maxNumParticles: 6
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -68836,7 +68880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1780436221
 Transform:
   m_ObjectHideFlags: 0
@@ -75885,7 +75929,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
-  m_YawDamping: 7.1
+  m_YawDamping: 20
   m_RollDamping: 0
   m_AngularDamping: 0
 --- !u!114 &1882074114
@@ -88573,10 +88617,6 @@ PrefabInstance:
       propertyPath: trigger.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2073375530}
-    - target: {fileID: 2011460319, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2011460320, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
       propertyPath: trigger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -88585,34 +88625,6 @@ PrefabInstance:
       propertyPath: trigger.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2073375530}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.269
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.901
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.13129684
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.0016287318
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.99126554
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011460322, guid: b9ed2c8017ea640a38b45b3f5959d5a6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.012296601
-      objectReference: {fileID: 0}
     - target: {fileID: 1139813042393271555, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
         type: 3}
       propertyPath: stealthBar
@@ -88643,11 +88655,6 @@ PrefabInstance:
       propertyPath: rampageButton
       value: 
       objectReference: {fileID: 2025181656}
-    - target: {fileID: 6091713508357852220, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6091713508357852220, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -88718,11 +88725,6 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 202818638579310571}
-    - target: {fileID: 6135915573295599642, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
-        type: 3}
-      propertyPath: gameOverCam
-      value: 
-      objectReference: {fileID: 1003358695}
     - target: {fileID: 6135915573295599642, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
         type: 3}
       propertyPath: topContainer
@@ -89236,3 +89238,4 @@ SceneRoots:
   - {fileID: 289860922}
   - {fileID: 1327340979}
   - {fileID: 2031379465}
+  - {fileID: 991167660}
