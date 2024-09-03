@@ -79,7 +79,7 @@ public class PauseScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(t);
 
         Time.timeScale = 0;
-         AdsManager.Instance.ShowInterstitial();
+        //  AdsManager.Instance.ShowInterstitial();
     }
 
     IEnumerator ResumePause(float t)

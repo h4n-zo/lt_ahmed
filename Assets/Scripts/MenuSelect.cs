@@ -27,7 +27,7 @@ public class MenuSelect : MonoBehaviour
         public float GetGraphicsQuality()
         {
             return PlayerPrefs.GetFloat(QualityPrefKey, 1); // Default to 1 (Low) if no saved value
-            
+
         }
 
         public void SetGraphicsQuality(float value)
@@ -86,11 +86,16 @@ public class MenuSelect : MonoBehaviour
 
     void Start()
     {
-        // PlayerPrefs.DeleteAll();
-
+        // Delete();
         UpdateCamera();
         Time.timeScale = 1f;
         gfxManager.EnableGFX();
+    }
+
+    private void Delete()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Data deleted");
     }
 
     void Update()
@@ -282,7 +287,7 @@ public class MenuSelect : MonoBehaviour
         // StartCoroutine(TimeToSaveGFx(5f));
     }
 
-     public void AssignGFXButton()
+    public void AssignGFXButton()
     {
         // saveButton.onClick.AddListener(gfxManager.OnSaveButtonClick);
         // Debug.Log("gfxManager.OnSaveButtonClick() is assigned");

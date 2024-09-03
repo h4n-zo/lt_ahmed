@@ -20,9 +20,12 @@ namespace Hanzo.Gfx
 
         [SerializeField] MenuSelect menuSelect;
 
+        private void Awake()
+        {
+            menuSelect = GameObject.FindObjectOfType<MenuSelect>();
+        }
         private void Start()
         {
-            // menuSelect = GameObject.FindObjectOfType<MenuSelect>();
             // Load the saved quality value
             currentQuality = (int)menuSelect.gfxManager.GetGraphicsQuality();
             UpdateGraphicsText();
@@ -33,7 +36,7 @@ namespace Hanzo.Gfx
             rightButton.onClick.AddListener(OnRightButtonClicked);
         }
 
-        private void OnLeftButtonClicked()
+        public void OnLeftButtonClicked()
         {
             currentQuality--;
             if (currentQuality < 1)
@@ -44,7 +47,7 @@ namespace Hanzo.Gfx
             UpdateGraphicsText();
         }
 
-        private void OnRightButtonClicked()
+        public void OnRightButtonClicked()
         {
             currentQuality++;
             if (currentQuality > 3)
