@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject topContainer;
     public GameObject missionCompleteCanvas;
     public int targetFrame = 60;
+
+    public int totalCash;
 
 
     private void Start()
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public void MissionComplete()
     {
+        GameObject.Find("cashAmountText").GetComponent<TextMeshProUGUI>().text = totalCash.ToString();
         missionCompleteCanvas.GetComponent<Animator>().SetBool("isOpen", true);
         AdsManager.Instance.ShowInterstitial();
     }
