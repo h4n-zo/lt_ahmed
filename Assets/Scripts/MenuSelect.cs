@@ -26,7 +26,7 @@ public class MenuSelect : MonoBehaviour
 
         public float GetGraphicsQuality()
         {
-            return PlayerPrefs.GetFloat(QualityPrefKey, 1); // Default to 1 (Low) if no saved value
+            return PlayerPrefs.GetFloat(QualityPrefKey, 0); // Default to 1 (Low) if no saved value
 
         }
 
@@ -86,7 +86,7 @@ public class MenuSelect : MonoBehaviour
 
     void Start()
     {
-        // Delete();
+        Delete();
         UpdateCamera();
         Time.timeScale = 1f;
         gfxManager.EnableGFX();

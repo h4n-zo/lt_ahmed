@@ -43,6 +43,8 @@ public class ScoreSystem : MonoBehaviour
 
     private void Update()
     {
+        textScore.text = $"{currentKill}/{totalKills}";
+        
         OnComplete(TaskComplete);
 
     }
@@ -50,14 +52,14 @@ public class ScoreSystem : MonoBehaviour
     public void OnComplete(bool task)
     {
         TaskComplete = task;
-        
+
         if (TaskComplete == true)
         {
             eventTaskHandler?.Invoke();
         }
 
     }
-  
+
 
     IEnumerator StartCountdown(float time)
     {

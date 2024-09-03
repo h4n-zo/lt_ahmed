@@ -14,37 +14,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GENESIS OF BREATH.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WINDPIPE SURREAL.unity
     guid: f9674e921beb143cf868f3fedbda8925
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LARYNX LABYRINTH.unity
     guid: e24a72d5a1ea442ca9ec7f54542aa46b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SINUS SECRETS.unity
     guid: 87b3af0632786421686d81c89e768e86
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VOICEBOX VALE.unity
     guid: e2f650e3a43b04756a61b0d35d7f1e0b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VOCAL CORD VORTEX.unity
     guid: 4558d5441be7b409ab4a79b0d70a8602
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SILENT WHIRLWIND.unity
     guid: 9d13ea9f696d04b1db0f21a689131e84
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARCANE BREEZE.unity
     guid: 1452a7254419044ff838546930b69500
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SERENE PASSAGE.unity
     guid: 932840d3f60b14db78f0f5c770c07d9f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GHOSTS & GEARS.unity
     guid: fcf6d7ecace86494c976a67a7d40f68c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RAGE DIFFERENTIAL.unity
     guid: 2ca960f1c655045a8909b36f00b7427a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/WINDPIPE SURREAL II.unity
     guid: 0c79b9fe8efd1459b9b20441aaece0be
   m_configObjects: {}

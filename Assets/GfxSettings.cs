@@ -12,8 +12,7 @@ namespace Hanzo.Gfx
         public UniversalRenderPipelineAsset mediumQualityAsset;
         public UniversalRenderPipelineAsset highQualityAsset;
 
-        public Button leftButton;
-        public Button rightButton;
+        public Slider qualitySlider; // Slider for adjusting quality
         public TextMeshProUGUI gfxText;
 
         private int currentQuality; // Changed to int for easier handling
@@ -24,61 +23,52 @@ namespace Hanzo.Gfx
         {
             menuSelect = GameObject.FindObjectOfType<MenuSelect>();
         }
+
         private void Start()
         {
             // Load the saved quality value
             currentQuality = (int)menuSelect.gfxManager.GetGraphicsQuality();
+            qualitySlider.value = currentQuality; // Set the slider to the current quality
             UpdateGraphicsText();
             ApplyGraphicsSettings(currentQuality);
 
-            // Add button listeners
-            leftButton.onClick.AddListener(OnLeftButtonClicked);
-            rightButton.onClick.AddListener(OnRightButtonClicked);
+            // Add slider listener
+            qualitySlider.onValueChanged.AddListener(OnSliderValueChanged);
         }
 
-        public void OnLeftButtonClicked()
+        private void OnSliderValueChanged(float value)
         {
-            currentQuality--;
-            if (currentQuality < 1)
-            {
-                currentQuality = 3; // Loop back to High if going below Low
-            }
-            ApplyGraphicsSettings(currentQuality);
+            // Round the slider value to the nearest integer
+            currentQuality = Mathf.RoundToInt(value);
+            // Clamp the value to ensure it's within bounds
+            currentQuality = Mathf.Clamp(currentQuality, 0, 2);
             UpdateGraphicsText();
-        }
-
-        public void OnRightButtonClicked()
-        {
-            currentQuality++;
-            if (currentQuality > 3)
-            {
-                currentQuality = 1; // Loop back to Low if going above High
-            }
             ApplyGraphicsSettings(currentQuality);
-            UpdateGraphicsText();
         }
 
         private void ApplyGraphicsSettings(int value)
         {
             switch (value)
             {
-                case 1:
+                case 0:
                     QualitySettings.SetQualityLevel(0); // Optional: If using Unity's quality settings
                     GraphicsSettings.renderPipelineAsset = lowQualityAsset;
                     Application.targetFrameRate = 30;
-                    Debug.Log("Graphics Quality : Low");
+                    Debug.Log("CurrentQuality: " + currentQuality);
                     break;
-                case 2:
+                case 1:
                     QualitySettings.SetQualityLevel(1); // Optional: If using Unity's quality settings
                     GraphicsSettings.renderPipelineAsset = mediumQualityAsset;
                     Application.targetFrameRate = 60;
-                    Debug.Log("Graphics Quality : Medium");
+                    Debug.Log("Graphics Quality: Medium");
+                    Debug.Log("CurrentQuality: " + currentQuality);
                     break;
-                case 3:
+                case 2:
                     QualitySettings.SetQualityLevel(2); // Optional: If using Unity's quality settings
                     GraphicsSettings.renderPipelineAsset = highQualityAsset;
                     Application.targetFrameRate = 60;
-                    Debug.Log("Graphics Quality : High");
+                    Debug.Log("Graphics Quality: High");
+                    Debug.Log("CurrentQuality: " + currentQuality);
                     break;
             }
         }
@@ -87,14 +77,14 @@ namespace Hanzo.Gfx
         {
             switch (currentQuality)
             {
+                case 0:
+                    gfxText.text = "LOW";
+                    break;
                 case 1:
-                    gfxText.text = "GFX QUALITY : LOW";
+                    gfxText.text = "MEDIUM";
                     break;
                 case 2:
-                    gfxText.text = "GFX QUALITY : MEDIUM";
-                    break;
-                case 3:
-                    gfxText.text = "GFX QUALITY : HIGH";
+                    gfxText.text = "HIGH";
                     break;
             }
         }
