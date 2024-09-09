@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] GameObject linePrefab; // Reference to the sprite prefab
     [SerializeField] Material deathTrailMaterial;
     private Vector3 lastPosition;
-    private GameObject lineRenderer; // Reference to the instantiated line sprite
+    [HideInInspector] public GameObject lineRenderer; // Reference to the instantiated line sprite
 
     [SerializeField] float lookRotationSpeed = 8f;
 
@@ -49,8 +49,6 @@ public class PlayerScript : MonoBehaviour
         defaultSpeed = agent.speed;
         angularSpeed = agent.angularSpeed;
         acceleration = agent.acceleration;
-
-        AdsManager.Instance.LoadBanner();
 
     }
 
@@ -90,6 +88,7 @@ public class PlayerScript : MonoBehaviour
         // Rest of the method remains the same
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(inputPosition);
+        agent.isStopped = false;
 
         if (Physics.Raycast(ray, out hit, 100, clickableLayers))
         {

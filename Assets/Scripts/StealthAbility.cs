@@ -83,7 +83,7 @@ public class StealthAbility : MonoBehaviour
 
     public void ExecuteAbility()
     {
-
+        // transform.position
         heartbeatAudio.Play();
 
         if (currentFill >= 1f && !isStealthActive)
