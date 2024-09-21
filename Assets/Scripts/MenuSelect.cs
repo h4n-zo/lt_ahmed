@@ -86,7 +86,7 @@ public class MenuSelect : MonoBehaviour
 
     void Start()
     {
-        Delete();
+        // Delete();
         UpdateCamera();
         Time.timeScale = 1f;
         gfxManager.EnableGFX();

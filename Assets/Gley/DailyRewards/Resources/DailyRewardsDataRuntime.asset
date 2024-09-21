@@ -18,7 +18,7 @@ MonoBehaviour:
     minutes: 30
     seconds: 0
     interactable: 0
-    availableAtStart: 0
+    availableAtStart: 1
     completeText: 
   calendarPrefab: {fileID: 1869782733140482, guid: de2046ad0284858438d0fa15bfdb6e31,
     type: 3}

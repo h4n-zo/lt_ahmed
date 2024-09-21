@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Game_Menu");
     }
 
     public void NextLevel()
@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("cashAmountText").GetComponent<TextMeshProUGUI>().text = totalCash.ToString();
         missionCompleteCanvas.GetComponent<Animator>().SetBool("isOpen", true);
         AdsManager.Instance.ShowInterstitial();
+        
     }
 
 }
