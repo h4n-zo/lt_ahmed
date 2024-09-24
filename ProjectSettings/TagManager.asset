@@ -12,6 +12,7 @@ TagManager:
   - Cash
   - MedKit
   - CameraCollider
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Minimap
   - CameraCollider
   - Hostage
-  - 
+  - Ground
   - 
   - 
   - 

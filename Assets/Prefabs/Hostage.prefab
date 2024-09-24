@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4093080821657969342}
   - component: {fileID: 4117613068840762778}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_MercenaryFemale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4093084294885891236}
   - component: {fileID: 4117432816313962942}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_SportyMale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094877073513876552}
   - component: {fileID: 4119102506399325394}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_GhillieSuit_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094501361007540182}
   - component: {fileID: 4119214688387417228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_BusinessMale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092762363436180626}
   - component: {fileID: 4119560513203227918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_ToplessMale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094767760245834538}
   - component: {fileID: 4119507313122952616}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_SportsBraFemale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1869,13 +1869,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4092869046118543260}
   - component: {fileID: 4119310100094067846}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_MercenaryMale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4092869046118543260
 Transform:
   m_ObjectHideFlags: 0
@@ -2162,7 +2162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092672408044512448}
   - component: {fileID: 4117586571149253720}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_SportyFemale_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3003,7 +3003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094462712081192002}
   - component: {fileID: 4119508927864135376}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_GothFemale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3265,7 +3265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092711598263560088}
   - component: {fileID: 4119292517135498026}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_MilitaryFemale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3595,7 +3595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094842074505733342}
   - component: {fileID: 4119585867303311134}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_SportyFemale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3793,13 +3793,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4093015431293634390}
   - component: {fileID: 4117591994030203654}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_MilitaryMale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4093015431293634390
 Transform:
   m_ObjectHideFlags: 0
@@ -3991,7 +3991,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094398343034013428}
   - component: {fileID: 4117448028226646506}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_RedneckMale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4006,7 +4006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4091433677224662204}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4125,7 +4125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094770046179490904}
   - component: {fileID: 4119374319290914284}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_70sFemale_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4291,7 +4291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4093041906556464578}
   - component: {fileID: 4119026143003010744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Character_SportyMale_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
