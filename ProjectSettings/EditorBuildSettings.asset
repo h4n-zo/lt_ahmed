@@ -45,9 +45,18 @@ EditorBuildSettings:
     path: Assets/Scenes/RAGE DIFFERENTIAL.unity
     guid: 2ca960f1c655045a8909b36f00b7427a
   - enabled: 1
+    path: Assets/Scenes/RIBCAGE REALM.unity
+    guid: 71ae9ce3bc6d5452183fe9032545e0c9
+  - enabled: 1
     path: Assets/Scenes/WINDPIPE SURREAL II.unity
     guid: 0c79b9fe8efd1459b9b20441aaece0be
   - enabled: 1
     path: Assets/Scenes/VISIONS & VAPOUR.unity
     guid: 42a19074425874f35b2a76e056750a63
+  - enabled: 1
+    path: Assets/Scenes/VEILED SURGE.unity
+    guid: ba555e926c58945d483064bf63363b06
+  - enabled: 1
+    path: Assets/Scenes/VEIN VOYAGE.unity
+    guid: a72a9f886947747af9c6c81bcd67b42e
   m_configObjects: {}
