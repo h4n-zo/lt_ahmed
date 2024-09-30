@@ -3192,7 +3192,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f757c15470e3df2478075e7bc730e8bc, type: 3}
 --- !u!4 &57830932 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4629244895359400, guid: f757c15470e3df2478075e7bc730e8bc,
+  m_CorrespondingSourceObject: {fileID: 6188284430906573861, guid: f757c15470e3df2478075e7bc730e8bc,
     type: 3}
   m_PrefabInstance: {fileID: 57830931}
   m_PrefabAsset: {fileID: 0}
@@ -35999,7 +35999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 14, y: -46}
+  m_AnchoredPosition: {x: 14, y: -58.81}
   m_SizeDelta: {x: 30.7922, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643645808
@@ -78559,7 +78559,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f757c15470e3df2478075e7bc730e8bc, type: 3}
 --- !u!4 &1416063868 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4629244895359400, guid: f757c15470e3df2478075e7bc730e8bc,
+  m_CorrespondingSourceObject: {fileID: 6188284430906573861, guid: f757c15470e3df2478075e7bc730e8bc,
     type: 3}
   m_PrefabInstance: {fileID: 1416063867}
   m_PrefabAsset: {fileID: 0}

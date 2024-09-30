@@ -56,7 +56,7 @@ public class Collectible : MonoBehaviour
                 var go = Instantiate(floatingText, transform.position, Quaternion.identity);
                 go.GetComponent<TextMesh>().color = Color.green;
                 go.GetComponent<TextMesh>().text = "+" + healthAmount.ToString();
-                other.GetComponent<PlayerHealth>().health =  healthAmount + other.GetComponent<PlayerHealth>().health;
+                other.GetComponent<PlayerHealth>().health = healthAmount + other.GetComponent<PlayerHealth>().health;
 
                 GetComponent<Collectible>().enabled = false;
                 medkitMeshRenderer.enabled = false;
@@ -68,8 +68,8 @@ public class Collectible : MonoBehaviour
                 var go = Instantiate(floatingText, transform.position, Quaternion.identity);
                 go.GetComponent<TextMesh>().text = "+" + cashAmount.ToString();
                 CurrencyManager.Instance.AddCurrency(cashAmount);
-                FindObjectOfType<GameManager>().totalCash =+ cashAmount;
-                
+                FindObjectOfType<GameManager>().totalCash += cashAmount;
+
                 GetComponent<Collectible>().enabled = false;
                 cashMeshRenderer.enabled = false;
                 cashCollider.enabled = false;

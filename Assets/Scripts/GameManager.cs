@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Application.targetFrameRate = targetFrame;
     }
+
+    private void Update() {
+        
+    }
     // Start is called before the first frame update
     public void Restart()
     {
