@@ -1,10 +1,12 @@
 <dependencies>
   <packages>
-    <package>com.google.android.gms:play-services-ads:23.2.0</package>
+    <package>com.google.android.gms:play-services-ads:23.3.0</package>
     <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
     <package>com.google.android.gms:play-services-basement:18.1.0</package>
-    <package>com.ironsource.adapters:admobadapter:4.3.44</package>
-    <package>com.ironsource.sdk:mediationsdk:8.3.0</package>
+    <package>com.ironsource.adapters:admobadapter:4.3.45</package>
+    <package>com.ironsource.adapters:unityadsadapter:4.3.43</package>
+    <package>com.ironsource.sdk:mediationsdk:8.4.0</package>
+    <package>com.unity3d.ads:unity-ads:4.12.3</package>
   </packages>
   <files />
   <settings>

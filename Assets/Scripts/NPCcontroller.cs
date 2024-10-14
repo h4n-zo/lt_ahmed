@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 //FINITE STATE MACHINE
 public enum EnemyState
@@ -33,17 +34,18 @@ public class NPCController : MonoBehaviour, IHear
     [Header("Icon Features")]
     public GameObject alertIcon;
     public GameObject chaseTargetIcon;
-    public GameObject soundIcon;
 
     [Header("Animation Features")]
     private const string BLENDSTATE = "Speed";
-    [SerializeField]private NavMeshAgent navMeshAgent;
+    [SerializeField] private NavMeshAgent navMeshAgent;
     [HideInInspector] public Animator animator;
 
     private float idleTimer = 0f;
     private bool isIdling = false;
 
     [SerializeField] private float alertDuration = 2.345f; // Adjust as needed
+    public TextMeshProUGUI alertDurationText;
+    private float defaultFontSize = 0.4f; // Default font size
     private float alertTimer = 0f;
     private bool isAlerting = false;
 
@@ -66,10 +68,12 @@ public class NPCController : MonoBehaviour, IHear
 
     [HideInInspector] public bool heardSomething = false;
     [HideInInspector] public bool isDead;
+    public GameObject deathCanvas;
 
     public bool isFiring = false;
     [HideInInspector] public float fireRate = 60f;
     private float nextTimeToFire = 0f;
+    private float shootingRange;
     private Weapon weapon;
 
     public static List<NPCController> allNPCs = new List<NPCController>();
@@ -88,6 +92,8 @@ public class NPCController : MonoBehaviour, IHear
 
 
         weapon = GetComponent<Weapon>();
+        shootingRange = weapon.shootingRange;
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         patrolSpeed = navMeshAgent.speed;
@@ -165,11 +171,30 @@ public class NPCController : MonoBehaviour, IHear
             if (isAlerting)
             {
                 alertTimer += Time.deltaTime;
+                float remainingTime = alertDuration - alertTimer;
+
+                if (alertDurationText != null)
+                {
+                    alertDurationText.text = remainingTime.ToString("F2") + "s";
+                    // Calculate the scaling factor based on remaining time
+                    float scaleFactor = remainingTime / alertDuration;
+
+                    // Calculate the new font size
+                    float newFontSize = Mathf.Lerp(0.1f, defaultFontSize, scaleFactor);
+
+                    // Apply the new font size
+                    alertDurationText.fontSize = newFontSize;
+                }
                 if (alertTimer >= alertDuration)
                 {
                     alertTimer = 0f;
                     isAlerting = false;
                     isFiring = true;
+                    if (alertDurationText != null)
+                    {
+                        alertDurationText.text = "";
+                        alertDurationText.fontSize = defaultFontSize; // Reset font size
+                    }
                     // StartChasing();
 
                 }
@@ -185,17 +210,16 @@ public class NPCController : MonoBehaviour, IHear
 
             if (enemyState == EnemyState.Chase)
             {
-                ChaseTarget();
+                float distanceToPlayer = Vector3.Distance(transform.position, target.position);
 
-                // Check if the player is still within sight during the Chase state
-                if (CanSeePlayer())
+                if (distanceToPlayer <= shootingRange && CanSeePlayer())
                 {
-                    // If the player is still within sight, switch to shooting
                     SwitchToShooting();
                 }
                 else
                 {
-                    // If the player is not within sight, continue chasing
+                    ChaseTarget();
+
                     // Calculate distance covered during chase
                     distanceCovered += navMeshAgent.velocity.magnitude * Time.deltaTime;
 
@@ -454,6 +478,9 @@ public class NPCController : MonoBehaviour, IHear
         enemyState = EnemyState.ShootAtSight;
         animator.SetFloat(BLENDSTATE, 1f);
 
+        // Stop the NavMeshAgent from moving
+        navMeshAgent.isStopped = true;
+
         // Start shooting at the player
         weapon.Shoot(target);
         weapon.AlignWithEnemy(target);
@@ -463,10 +490,7 @@ public class NPCController : MonoBehaviour, IHear
         {
             target.gameObject.layer = LayerMask.NameToLayer("Default");
             weapon.StopShooting();
-        }
-        if (enemyState == EnemyState.Patrol)
-        {
-            weapon.StopShooting();
+            ReturnToPatrol();
         }
     }
 
@@ -507,8 +531,7 @@ public class NPCController : MonoBehaviour, IHear
         if (isDead)
         {
             navMeshAgent.isStopped = false;
-            alertIcon.SetActive(false);
-            chaseTargetIcon.SetActive(false);
+            deathCanvas.SetActive(false);
             navMeshAgent.SetDestination(_pos);
             navMeshAgent.speed = chaseSpeed;
             animator.SetFloat(BLENDSTATE, 0.67f);
@@ -572,6 +595,7 @@ public class NPCController : MonoBehaviour, IHear
     void Die()
     {
         GetComponent<Die>().enabled = true;
+        deathCanvas.SetActive(false);
 
         this.tag = "Untagged";
         // Call Waypoint script to release if occupied

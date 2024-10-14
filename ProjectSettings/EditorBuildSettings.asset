@@ -62,7 +62,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VEIL OF MIST.unity
     guid: cf736651226a647b5833120304b17720
-  - enabled: 1
-    path: Assets/Scenes/WINDPIPE SURREAL II.unity
-    guid: 0c79b9fe8efd1459b9b20441aaece0be
   m_configObjects: {}

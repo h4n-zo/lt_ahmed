@@ -4,20 +4,51 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    Camera cam;
-    public float rotateValue = 180f;
+    [SerializeField] private Camera targetCamera;
+    [SerializeField] private bool faceCamera = true;
+    [SerializeField] private bool useWorldSpace = true;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if(cam == null)
-            cam = Camera.main;
+        // If no camera is assigned, use the main camera
+        if (targetCamera == null)
+        {
+            targetCamera = Camera.main;
+        }
+    }
 
-        if(cam == null)
-            return;
+    private void LateUpdate()
+    {
+        if (faceCamera && targetCamera != null)
+        {
+            LookAtCamera();
+        }
+    }
 
-        transform.LookAt(cam.transform);
-        transform.Rotate(Vector3.up * rotateValue);
-        
+    private void LookAtCamera()
+    {
+        if (useWorldSpace)
+        {
+            // Make the object face the camera in world space
+            transform.LookAt(transform.position + targetCamera.transform.rotation * Vector3.forward,
+                             targetCamera.transform.rotation * Vector3.up);
+        }
+        else
+        {
+            // Make the object face the camera in local space (useful for UI elements in world space)
+            transform.rotation = targetCamera.transform.rotation;
+        }
+    }
+
+    // Public method to toggle camera facing
+    public void ToggleFaceCamera(bool enable)
+    {
+        faceCamera = enable;
+    }
+
+    // Public method to change the target camera
+    public void SetTargetCamera(Camera newCamera)
+    {
+        targetCamera = newCamera;
     }
 }

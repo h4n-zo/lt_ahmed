@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Minimalist.Bar.Quantity;
 
 public class Collectible : MonoBehaviour
 {
+    [HideInInspector] public QuantityBhv healthBhv;
     public GameObject floatingText;
 
     public enum Collectible_Option_Type
@@ -36,6 +38,7 @@ public class Collectible : MonoBehaviour
     {
         // Store the starting position
         startPosition = transform.position;
+        healthBhv = GameObject.FindAnyObjectByType<QuantityBhv>();
     }
 
     void Update()
@@ -56,7 +59,8 @@ public class Collectible : MonoBehaviour
                 var go = Instantiate(floatingText, transform.position, Quaternion.identity);
                 go.GetComponent<TextMesh>().color = Color.green;
                 go.GetComponent<TextMesh>().text = "+" + healthAmount.ToString();
-                other.GetComponent<PlayerHealth>().health = healthAmount + other.GetComponent<PlayerHealth>().health;
+                // other.GetComponent<PlayerHealth>().health = healthAmount + other.GetComponent<PlayerHealth>().health;
+                other.GetComponent<PlayerHealth>().UpdateHealth((int)healthAmount);
 
                 GetComponent<Collectible>().enabled = false;
                 medkitMeshRenderer.enabled = false;

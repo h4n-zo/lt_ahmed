@@ -211,11 +211,15 @@ MonoBehaviour:
     filterSettings:
       RenderQueueType: 0
       LayerMask:
+        serializedVersion: 2
         m_Bits: 4294967295
       PassNames:
       - MKToonOutline
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
+    overrideShader: {fileID: 0}
+    overrideShaderPassIndex: 0
+    overrideMode: 1
     overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1
@@ -232,6 +236,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
   _layerMask:
+    serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &4420613502704348453
 MonoBehaviour:
