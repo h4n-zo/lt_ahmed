@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 using System.Linq;
 using TMPro;
+using Guirao.UltimateTextDamage;
 
 //FINITE STATE MACHINE
 public enum EnemyState
@@ -21,6 +21,9 @@ public enum EnemyState
 public class NPCController : MonoBehaviour, IHear
 {
     #region Variables
+    public UltimateTextDamageManager textDamageManager;
+    private string[] damageTexts = { "Klshunnk!", "Schlooonnk!", "Schunk!", "Glurnk!", "Sshhlunk!", "Thwump!", "Shlunk!" };
+    public Transform damageTextPos;
 
     public EnemyState enemyState;
     public GameObject fovMesh;
@@ -89,7 +92,7 @@ public class NPCController : MonoBehaviour, IHear
     void Start()
     {
         minimapIcon.color = aliveColor;
-
+        textDamageManager = GameObject.FindObjectOfType<UltimateTextDamageManager>();
 
         weapon = GetComponent<Weapon>();
         shootingRange = weapon.shootingRange;
@@ -594,6 +597,7 @@ public class NPCController : MonoBehaviour, IHear
 
     void Die()
     {
+
         GetComponent<Die>().enabled = true;
         deathCanvas.SetActive(false);
 
@@ -602,7 +606,19 @@ public class NPCController : MonoBehaviour, IHear
         if (currentWaypoint != null)
         {
             currentWaypoint.OnNPCDeath(this);
+            StartCoroutine(DisableEnemy(7f));
         }
+    }
+
+    IEnumerator DisableEnemy(float t)
+    {
+        yield return new WaitForSeconds(t);
+        gameObject.SetActive(false);
+    }
+
+    public void ShowStabText()
+    {
+        textDamageManager.Add(damageTexts[Random.Range(0, damageTexts.Length)], damageTextPos, "default");
     }
 
 

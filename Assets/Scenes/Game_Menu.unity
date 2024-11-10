@@ -20960,7 +20960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!114 &544430859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24844,7 +24846,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!1 &725543855
 GameObject:
   m_ObjectHideFlags: 0
@@ -28034,7 +28038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!1 &835122030
 GameObject:
   m_ObjectHideFlags: 0
@@ -35081,13 +35087,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096326414}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 901739444}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -54578,13 +54584,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468346259}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 328760496}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -57274,13 +57280,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587499655}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1331177371}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -58413,7 +58419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!114 &1628528582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60276,7 +60284,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!114 &1720768993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66205,13 +66215,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977868675}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1067249546}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -68152,13 +68162,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037329760}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 128023487}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -69250,12 +69260,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072772726}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!1 &2080627730
 GameObject:
   m_ObjectHideFlags: 0
@@ -69757,13 +69769,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096773986}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2043635999}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -69981,7 +69993,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4708e67bbabdd4c2fae25e44050545a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateValue: 0
+  targetCamera: {fileID: 0}
+  faceCamera: 1
+  useWorldSpace: 1
 --- !u!1 &2117424791
 GameObject:
   m_ObjectHideFlags: 0

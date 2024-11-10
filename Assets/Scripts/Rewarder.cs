@@ -30,7 +30,7 @@ public class Rewarder : MonoBehaviour
                     GameObject.FindObjectOfType<CurrencyManager>().AddCurrency(reward);
 
                     Debug.Log("Get reward for button");
-                    AdsManager.Instance.ShowInterstitial();
+                    AdsManager.Instance.ShowRewardedVideo();
                 }
             }
         }

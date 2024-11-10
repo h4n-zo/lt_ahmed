@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     public GameObject topContainer;
     public GameObject missionCompleteCanvas;
     public int targetFrame = 60;
+    public TextMeshProUGUI fpsText;
 
     public int totalCash;
+    float dt = 0.0f;
 
 
     private void Start()
@@ -21,8 +23,18 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = targetFrame;
     }
 
-    private void Update() {
-        
+    private void Update()
+    {
+
+        if (fpsText == null)
+        {
+            return;
+        }
+        else
+        {
+            dt += (Time.unscaledDeltaTime - dt) * 0.1f;
+            fpsText.text = (1.0f / dt).ToString("F1") + "FPS";
+        }
     }
     // Start is called before the first frame update
     public void Restart()
@@ -45,7 +57,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("cashAmountText").GetComponent<TextMeshProUGUI>().text = totalCash.ToString();
         missionCompleteCanvas.GetComponent<Animator>().SetBool("isOpen", true);
         AdsManager.Instance.ShowInterstitial();
-        
+
     }
 
 }

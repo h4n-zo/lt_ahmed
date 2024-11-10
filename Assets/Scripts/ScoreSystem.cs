@@ -21,8 +21,8 @@ public class ScoreSystem : MonoBehaviour
 
     private void Start()
     {
-        GameObject[] enemyList = GameObject.FindGameObjectsWithTag("Enemy");
-        totalKills = enemyList.Length;
+        // GameObject[] enemyList = GameObject.FindGameObjectsWithTag("Enemy");
+        // totalKills = enemyList.Length;
 
         textScore.text = $"{currentKill}/{totalKills}";
     }

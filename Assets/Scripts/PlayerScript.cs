@@ -164,7 +164,6 @@ public class PlayerScript : MonoBehaviour
 
                 Quaternion targetRot = Quaternion.LookRotation(directionToEnemy);
                 transform.rotation = targetRot;
-
                 AttackEnemy(distanceToEnemy, killDistance, enemy);
             }
 
@@ -172,59 +171,64 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void AttackEnemy(float _distanceToEnemy, float _killDistance, RaycastHit target)
+   private void AttackEnemy(float _distanceToEnemy, float _killDistance, RaycastHit target)
+{
+    distanceToKill = _distanceToEnemy;
+
+    if (_distanceToEnemy <= _killDistance && !isStabbed) // Ensure it runs only once
     {
-        distanceToKill = _distanceToEnemy;
+        Debug.Log("Player in enemy distance");
 
-        if (_distanceToEnemy <= _killDistance)
-        {
-            Debug.Log("Player in enemy distance");
+        target.collider.GetComponent<NavMeshAgent>().isStopped = false;
+        target.collider.GetComponent<NavMeshAgent>().speed = 0;
+        animator.SetBool(STAB, true);
+        agent.speed = 0;
+        isStabbing = true; // Set stabbing flag to true
+        isStabbed = true; // Set stabbed flag to true when initiating stab animation
 
-            // _npc = target.collider.GetComponent<TriggerSound>();
-
-            target.collider.GetComponent<NavMeshAgent>().isStopped = false;
-            target.collider.GetComponent<NavMeshAgent>().speed = 0;
-            animator.SetBool(STAB, true);
-            agent.speed = 0;
-            isStabbing = true; // Set stabbing flag to true
-            isStabbed = true; // Set stabbed flag to true when initiating stab animation
-
-            StartCoroutine(StopStabAnimation(target));
-        }
+        // Start the stab animation and call the coroutine to handle post-stab actions
+        StartCoroutine(StopStabAnimation(target));
     }
+}
 
     IEnumerator StopStabAnimation(RaycastHit _target)
+{
+    // Wait for the stab animation to finish
+    yield return new WaitForSeconds(stabAnimationDuration);
+
+    NPCController npc = _target.collider.GetComponent<NPCController>();
+
+    // Show stab text once after the animation completes
+    npc.ShowStabText();
+
+    npc.isDead = true;
+    agent.speed = defaultSpeed;
+    animator.SetBool(STAB, false);
+    isFollowingEnemy = false;
+    isStabbing = false; // Reset stabbing flag to false
+    isStabbed = false;  // Reset stabbed flag to allow future stabs
+
+    // Handle NPC death (disable components, play sound, etc.)
+    npc.GetComponent<TriggerSound>().PlaySound();
+    _target.collider.GetComponent<Animator>().Play("Death");
+    _target.collider.GetComponent<NavMeshAgent>().enabled = false;
+    npc.fovMesh.SetActive(false);
+    npc._DisableScript();
+    _target.collider.GetComponent<SphereCollider>().enabled = false;
+
+    // Increment score
+    ScoreSystem scoreSystem = GameObject.FindObjectOfType<ScoreSystem>();
+    if (scoreSystem != null)
     {
-        yield return new WaitForSeconds(stabAnimationDuration);
-
-        NPCController npc = _target.collider.GetComponent<NPCController>();
-        // _npc = npc.GetComponent<TriggerSound>();
-
-        npc.isDead = true;
-        agent.speed = defaultSpeed;
-        animator.SetBool(STAB, false);
-        isFollowingEnemy = false;
-        isStabbing = false; // Reset stabbing flag to false
-        isStabbed = false; // Reset stabbed flag to false after stab animation completes
-
-        npc.GetComponent<TriggerSound>().PlaySound();
-        _target.collider.GetComponent<Animator>().Play("Death");
-        _target.collider.GetComponent<NavMeshAgent>().enabled = false;
-        npc.fovMesh.SetActive(false);
-        npc._DisableScript();
-        _target.collider.GetComponent<SphereCollider>().enabled = false;
-
-        ScoreSystem scoreSystem = GameObject.FindObjectOfType<ScoreSystem>();
-        if (scoreSystem != null)
-        {
-            scoreSystem.AddScore(1);
-        }
-
-
-        if (lineRenderer != null)
-            Destroy(lineRenderer);
-        StopAllCoroutines();
+        scoreSystem.AddScore(1);
     }
+
+    // Destroy the line renderer and stop coroutines
+    if (lineRenderer != null)
+        Destroy(lineRenderer);
+
+    StopAllCoroutines();
+}
 
     void UpdateLineRenderer()
     {
