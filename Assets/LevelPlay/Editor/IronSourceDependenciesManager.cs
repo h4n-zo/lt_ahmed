@@ -15,7 +15,7 @@ using UnityEditor;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
-public class IronSourceDependenciesManager : EditorWindow
+public class IronSourceDependenciesManager : EditorWindow, IObserver<bool>
 {
     enum PackageType
     {
@@ -47,6 +47,7 @@ public class IronSourceDependenciesManager : EditorWindow
     ILevelPlayLogger m_Logger;
     IEditorAnalyticsService m_EditorAnalyticsService;
     Vector2 m_ScrollPosition;
+    IDisposable m_LevelPlayNetworkManagerUnsubscriber;
 
     public static void ShowISDependenciesManager()
     {
@@ -80,9 +81,29 @@ public class IronSourceDependenciesManager : EditorWindow
         Repaint();
     }
 
+    public virtual void OnCompleted()
+    {
+        this.Unsubscribe();
+    }
+
+    public virtual void OnError(Exception e)
+    {
+    }
+
+    public virtual void OnNext(bool value)
+    {
+        SetUpUIComponents();
+    }
+
+    public virtual void Unsubscribe()
+    {
+        m_LevelPlayNetworkManagerUnsubscriber.Dispose();
+    }
+
     async void OnEnable()
     {
         m_LevelPlayNetworkManager = EditorServices.Instance.LevelPlayNetworkManager;
+        m_LevelPlayNetworkManagerUnsubscriber = m_LevelPlayNetworkManager.Subscribe(this);
         m_FileService = EditorServices.Instance.FileService;
         m_Logger = EditorServices.Instance.LevelPlayLogger;
         m_EditorAnalyticsService = EditorServices.Instance.EditorAnalyticsService;
@@ -121,6 +142,8 @@ public class IronSourceDependenciesManager : EditorWindow
 
     void OnGUI()
     {
+        minSize = new Vector2(k_Width, k_Height);
+        maxSize = new Vector2(k_Width, k_Height);
         var rootStyle = new GUIStyle()
         {
             margin = new RectOffset(0, 0, 0, 0),
@@ -148,6 +171,7 @@ public class IronSourceDependenciesManager : EditorWindow
     {
         AssetDatabase.Refresh();
         m_IntegrationManagerDownloader.CancelDownloads();
+        this.Unsubscribe();
     }
 
     void SetUpUIComponents()

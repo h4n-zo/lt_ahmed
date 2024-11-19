@@ -29,13 +29,15 @@ apply plugin: 'com.android.library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 // Android Resolver Dependencies Start
-    implementation 'com.google.android.gms:play-services-ads:23.3.0' // Assets/LevelPlay/Editor/ISAdMobAdapterDependencies.xml:8
+    implementation 'com.google.android.gms:play-services-ads:23.5.0' // Assets/LevelPlay/Editor/ISAdMobAdapterDependencies.xml:8
     implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1' // Assets/LevelPlay/Editor/IronSourceSDKDependencies.xml:17
     implementation 'com.google.android.gms:play-services-basement:18.1.0' // Assets/LevelPlay/Editor/IronSourceSDKDependencies.xml:25
-    implementation 'com.ironsource.adapters:admobadapter:4.3.45' // Assets/LevelPlay/Editor/ISAdMobAdapterDependencies.xml:15
-    implementation 'com.ironsource.adapters:unityadsadapter:4.3.43' // Assets/LevelPlay/Editor/ISUnityAdsAdapterDependencies.xml:8
+    implementation 'com.google.android.play:asset-delivery:2.2.1' // Assets/GooglePlayPlugins/com.google.play.assetdelivery/Editor/Dependencies.xml:3
+    implementation 'com.google.android.play:core-common:2.0.4' // Assets/GooglePlayPlugins/com.google.play.core/Editor/Dependencies.xml:3
+    implementation 'com.ironsource.adapters:admobadapter:4.3.47' // Assets/LevelPlay/Editor/ISAdMobAdapterDependencies.xml:15
+    implementation 'com.ironsource.adapters:unityadsadapter:4.3.44' // Assets/LevelPlay/Editor/ISUnityAdsAdapterDependencies.xml:8
     implementation 'com.ironsource.sdk:mediationsdk:8.4.0' // Assets/LevelPlay/Editor/IronSourceSDKDependencies.xml:9
-    implementation 'com.unity3d.ads:unity-ads:4.12.3' // Assets/LevelPlay/Editor/ISUnityAdsAdapterDependencies.xml:15
+    implementation 'com.unity3d.ads:unity-ads:4.12.4' // Assets/LevelPlay/Editor/ISUnityAdsAdapterDependencies.xml:15
 // Android Resolver Dependencies End
     implementation 'com.google.android.gms:play-services-appset:16.0.0'
 **DEPS**}

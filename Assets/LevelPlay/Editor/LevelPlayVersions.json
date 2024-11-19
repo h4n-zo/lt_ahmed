@@ -15,6 +15,7 @@
         "displayName": "IronSource SDK",
         "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/IronSource/${VERSION}/IronSourceSDKDependencies.xml",
         "dependencyXmlFileName": "IronSourceSDKDependencies.xml",
+        "updateMessage": "ironSource SDK 8.4.0 Update: we've released a new version of the ironSource SDK for LevelPlay.\nIf you integrated Unity Plugin v8.1.0+ or the Ads Mediation package, you can update directly from\nPackage Manager or the Network Manager. If you integrated the Unity Plugin v8.0.0, please\ndownload the new version here: <a href=\"https://developers.is.com/ironsource-mobile/unity/unity-plugin/\">https://developers.is.com/ironsource-mobile/unity/unity-plugin/</a>",
         "versions": {
             "8.4.0": {
                 "androidSdkVersion": "8.4.0",
@@ -30,6 +31,17 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/UnityAds/${VERSION}/ISUnityAdsAdapterDependencies.xml",
             "dependencyXmlFileName": "ISUnityAdsAdapterDependencies.xml",
             "versions": {
+                "4.3.49.0": {
+                    "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                    "android": {
+                        "adapterVersion": "4.3.44",
+                        "adNetworkVersion": "4.12.4"
+                    },
+                    "ios": {
+                        "adapterVersion": "4.3.44.0",
+                        "adNetworkVersion": "4.12.4"
+                    }
+                },
                 "4.3.48.1": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -48,6 +60,17 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/AppLovin/${VERSION}/ISAppLovinAdapterDependencies.xml",
             "dependencyXmlFileName": "ISAppLovinAdapterDependencies.xml",
             "versions": {
+                "4.3.54.0": {
+                    "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                    "android": {
+                        "adapterVersion": "4.3.48",
+                        "adNetworkVersion": "13.0.1"
+                    },
+                    "ios": {
+                        "adapterVersion": "4.3.50.0",
+                        "adNetworkVersion": "13.0.1"
+                    }
+                },
                 "4.3.53.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -74,7 +97,6 @@
         },
         "APS": {
             "displayName": "APS",
-            "isNew": true,
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/APS/${VERSION}/ISAPSAdapterDependencies.xml",
             "dependencyXmlFileName": "ISAPSAdapterDependencies.xml",
             "versions": {
@@ -119,6 +141,17 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/Bigo/${VERSION}/ISBigoAdapterDependencies.xml",
             "dependencyXmlFileName": "ISBigoAdapterDependencies.xml",
             "versions": {
+                "4.3.5.0": {
+                  "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                  "android": {
+                    "adapterVersion": "4.3.4",
+                    "adNetworkVersion": "5.0.2"
+                  },
+                  "ios": {
+                    "adapterVersion": "4.3.3.0",
+                    "adNetworkVersion": "4.5.1"
+                  }
+                },
                 "4.3.4.0": {
                   "ironSourceSdkVersion": "[8.4.0, 9.0[",
                   "android": {
@@ -171,6 +204,17 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/BidMachine/${VERSION}/ISBidMachineAdapterDependencies.xml",
             "dependencyXmlFileName": "ISBidMachineAdapterDependencies.xml",
             "versions": {
+                "4.3.11.3": {
+                    "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                    "android": {
+                        "adapterVersion": "4.3.9",
+                        "adNetworkVersion": "3.0.1"
+                    },
+                    "ios": {
+                        "adapterVersion": "4.3.11.3",
+                        "adNetworkVersion": "3.0.1"
+                    }
+                },
                 "4.3.11.1": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -218,6 +262,13 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/CSJ/${VERSION}/ISCSJAdapterDependencies.xml",
             "dependencyXmlFileName": "ISCSJAdapterDependencies.xml",
             "versions": {
+              "4.3.7.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "ios": {
+                  "adapterVersion": "4.3.7.0",
+                  "adNetworkVersion": "6.4.3.2"
+                }
+              },
                 "4.3.6.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "ios": {
@@ -239,6 +290,28 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/Fyber/${VERSION}/ISFyberAdapterDependencies.xml",
             "dependencyXmlFileName": "ISFyberAdapterDependencies.xml",
             "versions": {
+              "4.3.49.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.35",
+                  "adNetworkVersion": "8.3.3"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.37.0",
+                  "adNetworkVersion": "8.3.2"
+                }
+              },
+              "4.3.48.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.34",
+                  "adNetworkVersion": "8.3.2"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.37.0",
+                  "adNetworkVersion": "8.3.2"
+                }
+              },
                 "4.3.47.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -268,6 +341,28 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/AdMob/${VERSION}/ISAdMobAdapterDependencies.xml",
             "dependencyXmlFileName": "ISAdMobAdapterDependencies.xml",
             "versions": {
+              "4.3.67.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.47.0",
+                  "adNetworkVersion": "23.5.0"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.58.0",
+                  "adNetworkVersion": "11.11.0"
+                }
+              },
+                "4.3.66.0": {
+                    "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                    "android": {
+                        "adapterVersion": "4.3.46.0",
+                        "adNetworkVersion": "23.4.0"
+                    },
+                    "ios": {
+                        "adapterVersion": "4.3.58.0",
+                        "adNetworkVersion": "11.11.0"
+                    }
+                },
                 "4.3.65.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -355,6 +450,17 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/Vungle/${VERSION}/ISVungleAdapterDependencies.xml",
             "dependencyXmlFileName": "ISVungleAdapterDependencies.xml",
             "versions": {
+              "4.3.47.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.27",
+                  "adNetworkVersion": "7.4.2"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.38.0",
+                  "adNetworkVersion": "7.4.2"
+                }
+              },
                 "4.3.46.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -480,6 +586,17 @@
             "dependencyXmlFileName": "ISMolocoAdapterDependencies.xml",
             "isNew": true,
             "versions": {
+                "4.3.9.0": {
+                    "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                    "android": {
+                        "adapterVersion": "4.3.8",
+                        "adNetworkVersion": "3.2.0"
+                    },
+                    "ios": {
+                        "adapterVersion": "4.3.7.0",
+                        "adNetworkVersion": "3.2.0"
+                    }
+                },
                 "4.3.8.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -550,6 +667,17 @@
             "dependencyXmlFileName": "ISOguryAdapterDependencies.xml",
             "isNew": true,
             "versions": {
+              "4.3.2.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.0",
+                  "adNetworkVersion": "5.8.0"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.2.0",
+                  "adNetworkVersion": "5.0.1"
+                }
+              },
                 "4.3.1.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -579,6 +707,28 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/Pangle/${VERSION}/ISPangleAdapterDependencies.xml",
             "dependencyXmlFileName": "ISPangleAdapterDependencies.xml",
             "versions": {
+              "4.3.39.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.31",
+                  "adNetworkVersion": "6.3.0.4"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.35.0",
+                  "adNetworkVersion": "6.3.0.9"
+                }
+              },
+              "4.3.38.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.31",
+                  "adNetworkVersion": "6.3.0.4"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.34.0",
+                  "adNetworkVersion": "6.3.0.8"
+                }
+              },
                 "4.3.37.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -608,6 +758,17 @@
             "dependencyXmlURL": "https://s3.amazonaws.com/ssa.public/Dependencies-xmls/Smaato/${VERSION}/ISSmaatoAdapterDependencies.xml",
             "dependencyXmlFileName": "ISSmaatoAdapterDependencies.xml",
             "versions": {
+                "4.3.15.1": {
+                  "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                  "android": {
+                    "adapterVersion": "4.3.12",
+                    "adNetworkVersion": "22.7.1"
+                  },
+                  "ios": {
+                    "adapterVersion": "4.3.15.0",
+                    "adNetworkVersion": "22.9.1"
+                  }
+                },
                 "4.3.15.0": {
                   "ironSourceSdkVersion": "[8.4.0, 9.0[",
                   "android": {
@@ -677,6 +838,28 @@
             "dependencyXmlFileName": "ISVerveAdapterDependencies.xml",
             "isNew": true,
             "versions": {
+              "4.3.4.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.3",
+                  "adNetworkVersion": "3.2.0"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.3.0",
+                  "adNetworkVersion": "3.1.3"
+                }
+              },
+                "4.3.3.0": {
+                    "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                    "android": {
+                        "adapterVersion": "4.3.3",
+                        "adNetworkVersion": "3.2.0"
+                    },
+                    "ios": {
+                        "adapterVersion": "4.3.2.0",
+                        "adNetworkVersion": "3.1.2"
+                    }
+                },
                 "4.3.2.0": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {
@@ -707,6 +890,17 @@
             "dependencyXmlFileName": "ISYandexAdapterDependencies.xml",
             "isNew": true,
             "versions": {
+              "4.3.6.0": {
+                "ironSourceSdkVersion": "[8.4.0, 9.0[",
+                "android": {
+                  "adapterVersion": "4.3.5",
+                  "adNetworkVersion": "7.6.0"
+                },
+                "ios": {
+                  "adapterVersion": "4.3.6.0",
+                  "adNetworkVersion": "7.6.1"
+                }
+              },
                 "4.3.5.1": {
                     "ironSourceSdkVersion": "[8.4.0, 9.0[",
                     "android": {

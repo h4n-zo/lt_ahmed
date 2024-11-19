@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Unity.Services.LevelPlay.Editor
 {
-    internal interface ILevelPlayNetworkManager
+    internal interface ILevelPlayNetworkManager : IObservable<bool>
     {
         UnityPackage UnityPackage { get; }
         Dictionary<string, Adapter> Adapters { get; }
@@ -23,5 +23,6 @@ namespace Unity.Services.LevelPlay.Editor
         Task Install(Adapter adapter, AdapterVersion adapterVersion);
         Task Install(UnityPackageVersion unityPackageVersion);
         Task Install(SdkVersion sdkVersion);
+        void UiUpdate();
     }
 }

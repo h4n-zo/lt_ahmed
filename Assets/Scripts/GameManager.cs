@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public void Restart()
     {
+        AdsManager.Instance.ShowInterstitial();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

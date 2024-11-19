@@ -72,6 +72,41 @@ namespace Unity.Services.LevelPlay.Editor
             IronSourceSdk = ironSourceSdk;
             RangeVersionRegex = new Regex(@"^([\[\]\(\)])(\S*)\s*,\s*(\S*)([\[\]\(\)])$", RegexOptions.None, TimeSpan.FromSeconds(2));
             SpecificVersionRegex = new Regex(@"^[\.0-9]+$", RegexOptions.None, TimeSpan.FromSeconds(2));
+            m_Observers = new List<IObserver<bool>>();
+        }
+
+        public void UiUpdate()
+        {
+            foreach (var observer in m_Observers)
+            {
+                observer.OnNext(true);
+            }
+        }
+
+        private List<IObserver<bool>> m_Observers;
+        public IDisposable Subscribe(IObserver<bool> observer)
+        {
+            if (!m_Observers.Contains(observer))
+                m_Observers.Add(observer);
+            return new Unsubscriber(m_Observers, observer);
+        }
+
+        private class Unsubscriber : IDisposable
+        {
+            private List<IObserver<bool>> m_Observers;
+            private IObserver<bool> m_Observer;
+
+            public Unsubscriber(List<IObserver<bool>> observers, IObserver<bool> observer)
+            {
+                this.m_Observers = observers;
+                this.m_Observer = observer;
+            }
+
+            public void Dispose()
+            {
+                if (m_Observer != null && m_Observers.Contains(m_Observer))
+                    m_Observers.Remove(m_Observer);
+            }
         }
 
         public void LoadVersionsFromJson()
@@ -429,7 +464,7 @@ namespace Unity.Services.LevelPlay.Editor
                     throw new IOException(message);
                 }
 
-                var localDownloadPath = m_FileService.GetNewTempFilePath();
+                var localDownloadPath = m_FileService.GetNewTempFilePath() + ".unitypackage";
                 m_FileService.Delete(localDownloadPath);
                 m_FileService.WriteAllBytes(localDownloadPath, webRequest.DownloadHandlerData());
                 m_FileService.ImportPackage(localDownloadPath, true);

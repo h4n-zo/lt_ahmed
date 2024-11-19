@@ -19786,7 +19786,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a01370b0c1ce945aea7d86dfe4a36e1e, type: 3}
@@ -117998,8 +117998,7 @@ MonoBehaviour:
   dialogue:
     name: COMMANDER
     sentences:
-    - The intel got to command you are trapped in the border of the Nothern part
-      of the country.
+    - Clear the island of these terrorists.
     - 'Force your way to the other side of the island. I have exfil waiting to bring
       you home.
 

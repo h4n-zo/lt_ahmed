@@ -136201,12 +136201,7 @@ MonoBehaviour:
   dialogue:
     name: COMMANDER
     sentences:
-    - The intel got to command you are trapped in the border of the Nothern part
-      of the country.
-    - 'Force your way to the other side of the island. I have exfil waiting to bring
-      you home.
-
-      Stay Safe.'
+    - The people of the island are living in fear. Suppress all enemy positions.
 --- !u!1 &2073566101
 GameObject:
   m_ObjectHideFlags: 0

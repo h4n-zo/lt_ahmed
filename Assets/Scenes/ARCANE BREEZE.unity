@@ -11360,7 +11360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textScore: {fileID: 914980270}
-  totalKills: 1
+  totalKills: 18
   timer: 1.4
   TaskComplete: 0
   eventTaskHandler:

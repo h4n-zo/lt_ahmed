@@ -105,7 +105,7 @@ public class AdsManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // ReassignButtonListeners(); // Reassign button listeners after scene load
-        StartCoroutine(EnableADS(3.5f));
+        // StartCoroutine(EnableADS(3.5f));
 
     }
 

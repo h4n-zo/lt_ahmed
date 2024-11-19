@@ -3017,6 +3017,7 @@ MonoBehaviour:
   topContainer: {fileID: 425871108}
   missionCompleteCanvas: {fileID: 4469232196576601714}
   targetFrame: 75
+  fpsText: {fileID: 0}
   totalCash: 0
 --- !u!4 &84046191
 Transform:
@@ -9964,7 +9965,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a01370b0c1ce945aea7d86dfe4a36e1e, type: 3}

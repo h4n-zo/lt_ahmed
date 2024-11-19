@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LARYNX LABYRINTH.unity
     guid: e24a72d5a1ea442ca9ec7f54542aa46b
   - enabled: 0
+    path: Assets/Scenes/MEMO MELTDOWN.unity
+    guid: fc7f96e3d8b1449ce84477ed112d8150
+  - enabled: 0
     path: Assets/Scenes/SINUS SECRETS.unity
     guid: 87b3af0632786421686d81c89e768e86
   - enabled: 0
@@ -39,8 +42,8 @@ EditorBuildSettings:
     path: Assets/Scenes/ARCANE BREEZE.unity
     guid: 1452a7254419044ff838546930b69500
   - enabled: 0
-    path: Assets/Scenes/SERENE PASSAGE.unity
-    guid: 932840d3f60b14db78f0f5c770c07d9f
+    path: Assets/Scenes/KEYBOARD KAMIKAZE.unity
+    guid: 8f2e1724a34334c4ca3e190ff299c3d2
   - enabled: 0
     path: Assets/Scenes/ALVEOLI ABYSS.unity
     guid: 37c86e377b25549a781d3066e951cd64
@@ -54,11 +57,17 @@ EditorBuildSettings:
     path: Assets/Scenes/VEIL OF MIST.unity
     guid: cf736651226a647b5833120304b17720
   - enabled: 0
+    path: Assets/Scenes/PERFORMANCE REVIEW PANIC.unity
+    guid: 5fe15bbe63cc447ab9166e0e53ac6ab4
+  - enabled: 0
     path: Assets/Scenes/VEIN VOYAGE.unity
     guid: 116020925882047f2a711147ec37738b
   - enabled: 0
     path: Assets/Scenes/CRYPTIC AIRFLOW.unity
     guid: ab71061163573471296d84662d207ea2
+  - enabled: 0
+    path: Assets/Scenes/BOARDROOM BREACH.unity
+    guid: 4acd199d3e5084297911aeaab812112d
   - enabled: 0
     path: Assets/Scenes/RIBCAGE REALM.unity
     guid: 71ae9ce3bc6d5452183fe9032545e0c9
@@ -66,9 +75,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AORTIC ARSENAL.unity
     guid: 3621d7697d01a4a4eab387f657fe15b9
   - enabled: 0
-    path: Assets/Scenes/BOARDROOM BREACH.unity
-    guid: 4acd199d3e5084297911aeaab812112d
+    path: Assets/Scenes/MAILBOX INFILTRATION.unity
+    guid: bc8877afbe59b40b68c323257391ca84
   - enabled: 1
-    path: Assets/Scenes/MEMO MELTDOWN.unity
-    guid: fc7f96e3d8b1449ce84477ed112d8150
+    path: Assets/Scenes/OFFICE PARTY OPS.unity
+    guid: 5b78d192a38644039a3bf84898ecdc6e
   m_configObjects: {}

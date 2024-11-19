@@ -56,8 +56,8 @@ namespace Unity.Services.LevelPlay.Editor
             }
             try
             {
-                var sdk = m_LevelPlayNetworkManager.IronSourceSdk;
                 var currentIronSourceSdkVersion = m_LevelPlayNetworkManager.InstalledSdkVersion();
+                // Install the latest compatible IronSource SDK if it is not installed
                 if (currentIronSourceSdkVersion == null)
                 {
                     var latestIronSourceSdkVersion = m_LevelPlayNetworkManager.CompatibleIronSourceSdkVersions().FirstOrDefault();
@@ -65,6 +65,7 @@ namespace Unity.Services.LevelPlay.Editor
                     {
                         await m_LevelPlayNetworkManager.Install(latestIronSourceSdkVersion);
                         AssetDatabase.Refresh();
+                        m_LevelPlayNetworkManager.UiUpdate();
                     }
                 }
             }

@@ -15,7 +15,7 @@ public static class dataSource
 
 public class IronSource : IronSourceIAgent
 {
-    [System.Obsolete(@"Please use the pluginVersion function", false)] public static string UNITY_PLUGIN_VERSION = @"8.4.0-r";
+    [System.Obsolete(@"Please use the pluginVersion function", false)] public static string UNITY_PLUGIN_VERSION = @"8.4.1-r";
     public static IronSource Agent { get; }
     public void clearRewardedVideoServerParams();
     [System.Obsolete(@"This method will be removed in version 9.0.0. Please use the LevelPlayBannerAd.DestroyAd() method instead.")] public void destroyBanner();
