@@ -55,8 +55,8 @@ namespace Hanzo.Gfx
                     GraphicsSettings.renderPipelineAsset = lowQualityAsset;
                     QualitySettings.globalTextureMipmapLimit = 2; // Set texture resolution to 512
                     Application.targetFrameRate = 30;
-                    Debug.Log("Graphics Quality: Low (512 Texture)");
-                    Debug.Log("CurrentQuality: " + currentQuality);
+                    // Debug.Log("Graphics Quality: Low (512 Texture)");
+                    // Debug.Log("CurrentQuality: " + currentQuality);
                     break;
                 case 1:
                     QualitySettings.SetQualityLevel(1); // Optional: If using Unity's quality settings
@@ -64,8 +64,8 @@ namespace Hanzo.Gfx
                     QualitySettings.globalTextureMipmapLimit = 1; // Set texture resolution to 1024
                     // QualitySettings.globalTextureMipmapLimit = 2; // Set texture resolution to 512
                     Application.targetFrameRate = 60;
-                    Debug.Log("Graphics Quality: Medium (1024 Texture)");
-                    Debug.Log("CurrentQuality: " + currentQuality);
+                    // Debug.Log("Graphics Quality: Medium (1024 Texture)");
+                    // Debug.Log("CurrentQuality: " + currentQuality);
                     break;
                 case 2:
                     QualitySettings.SetQualityLevel(2); // Optional: If using Unity's quality settings
@@ -73,8 +73,8 @@ namespace Hanzo.Gfx
                     // QualitySettings.globalTextureMipmapLimit = 0; // Set texture resolution to 4096
                     QualitySettings.globalTextureMipmapLimit = 1; // Set texture resolution to 2048 (2K)
                     Application.targetFrameRate = 60;
-                    Debug.Log("Graphics Quality: High (4096 Texture)");
-                    Debug.Log("CurrentQuality: " + currentQuality);
+                    // Debug.Log("Graphics Quality: High (4096 Texture)");
+                    // Debug.Log("CurrentQuality: " + currentQuality);
                     break;
             }
         }

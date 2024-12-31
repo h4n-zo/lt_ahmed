@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: dc6a011be4beb43c39957fb1764df78a
   - enabled: 1
+    path: Assets/Scenes/Login_Screen.unity
+    guid: de89ce0d477a047928939f297de257ef
+  - enabled: 1
     path: Assets/Scenes/Game_Menu.unity
     guid: 609833bdfba5848fe8da6f00b296f6dc
   - enabled: 0
@@ -30,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SINUS SECRETS.unity
     guid: 87b3af0632786421686d81c89e768e86
   - enabled: 0
-    path: Assets/Scenes/VOICEBOX VALE.unity
+    path: Assets/Scenes/Voicebox Vale.unity
     guid: e2f650e3a43b04756a61b0d35d7f1e0b
   - enabled: 0
     path: Assets/Scenes/VOCAL CORD VORTEX.unity
@@ -77,7 +80,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MAILBOX INFILTRATION.unity
     guid: bc8877afbe59b40b68c323257391ca84
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OFFICE PARTY OPS.unity
     guid: 5b78d192a38644039a3bf84898ecdc6e
   m_configObjects: {}

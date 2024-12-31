@@ -9,7 +9,7 @@ public class LoadingScript : MonoBehaviour
 {
     // private float time;
     public float second = 11f;
-    public string mainMenu;
+    // public string mainMenu;
     // public Image fillImage;
 
 
@@ -21,19 +21,10 @@ public class LoadingScript : MonoBehaviour
         Invoke("LoadGame", second);
     }
 
-    // Update is called once per frame
-    // void Update()
-    // {
-    //     if (time < 5)
-    //     {
-    //         time += Time.deltaTime;
-    //         fillImage.fillAmount = time / second;
-
-    //     }
-    // }
+    
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(mainMenu);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
