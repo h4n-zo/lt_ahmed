@@ -9,30 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: dc6a011be4beb43c39957fb1764df78a
   - enabled: 1
-    path: Assets/Scenes/Login_Screen.unity
-    guid: de89ce0d477a047928939f297de257ef
-  - enabled: 1
     path: Assets/Scenes/Game_Menu.unity
     guid: 609833bdfba5848fe8da6f00b296f6dc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/PAPER TRAIL PROTOCOL.unity
     guid: 2cc08f8fa64de4193ae02c2f09694d9d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GENESIS OF BREATH.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/WINDPIPE SURREAL.unity
     guid: f9674e921beb143cf868f3fedbda8925
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LARYNX LABYRINTH.unity
     guid: e24a72d5a1ea442ca9ec7f54542aa46b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MEMO MELTDOWN.unity
     guid: fc7f96e3d8b1449ce84477ed112d8150
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SINUS SECRETS.unity
     guid: 87b3af0632786421686d81c89e768e86
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Voicebox Vale.unity
     guid: e2f650e3a43b04756a61b0d35d7f1e0b
   - enabled: 0
@@ -84,3 +81,4 @@ EditorBuildSettings:
     path: Assets/Scenes/OFFICE PARTY OPS.unity
     guid: 5b78d192a38644039a3bf84898ecdc6e
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

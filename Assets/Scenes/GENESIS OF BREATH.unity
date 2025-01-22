@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
-  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -171,6 +168,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -256,6 +255,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -694,6 +695,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -777,6 +780,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1177,7 +1182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 21.6, z: -16.1}
+  m_FollowOffset: {x: 0, y: 14.9, z: -12.4}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 1
@@ -1429,6 +1434,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1729,10 +1736,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1728403638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -38.3406, y: -38.8487}
+  m_SizeDelta: {x: 49.6594, y: 47.1513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152571203
 MonoBehaviour:
@@ -2929,6 +2936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
+      propertyPath: alertDuration
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
+        type: 3}
       propertyPath: npcLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -2939,52 +2951,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1055360850}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 896005116}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[2]
+      propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 779723445}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 135895892}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[4]
+      propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[5]
+      propertyPath: 'waypoints.Array.data[5]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[6]
+      propertyPath: 'waypoints.Array.data[6]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[7]
+      propertyPath: 'waypoints.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[8]
+      propertyPath: 'waypoints.Array.data[8]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[9]
+      propertyPath: 'waypoints.Array.data[9]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608500, guid: 9658c9a89bc644bb9814ff76b4d21f70,
@@ -3307,7 +3319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 23000012514709672, guid: 2b428f431bec4ad4dbb012a63ee42ad2,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: eff5fe3891762334a8ab18025c35b803, type: 2}
     m_RemovedComponents: []
@@ -3422,15 +3434,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -3559,9 +3573,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267462073}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.1064436, g: 0.9273189, b: 0.9811321, a: 1}
   m_Intensity: 21
   m_Range: 25.1
@@ -3732,9 +3745,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272093091}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.105882354, g: 0.9254902, b: 0.98039216, a: 1}
   m_Intensity: 69.4
   m_Range: 16.3
@@ -4365,7 +4377,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1527
+    m_Bits: 26103
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4385,8 +4397,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.005705964, y: 0.89867085, z: -0.43843058, w: 0.011695771}
-  m_LocalPosition: {x: -2.18, y: 21.17041, z: 30.17}
+  m_LocalRotation: {x: 0.0069402074, y: 0.9127643, z: -0.4081327, w: 0.015521359}
+  m_LocalPosition: {x: -2.18, y: 14.470409, z: 26.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4481,6 +4493,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a01370b0c1ce945aea7d86dfe4a36e1e, type: 3}
+  m_Resource: {fileID: 8300000, guid: a01370b0c1ce945aea7d86dfe4a36e1e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4630,6 +4643,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4739,6 +4754,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4882,9 +4899,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345837718}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.1064436, g: 0.9273189, b: 0.9811321, a: 1}
   m_Intensity: 21
   m_Range: 25.1
@@ -5203,9 +5219,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398722281}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 48.95
   m_Range: 10
@@ -5361,9 +5376,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
   m_Intensity: 2
   m_Range: 10
@@ -5905,6 +5919,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6684,6 +6700,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7373,6 +7391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
+      propertyPath: alertDuration
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
+        type: 3}
       propertyPath: npcLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -7383,52 +7406,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 144322305}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1771849167}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[2]
+      propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 297931202}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 320723446}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[4]
+      propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 426705154}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[5]
+      propertyPath: 'waypoints.Array.data[5]'
       value: 
       objectReference: {fileID: 2061519063}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[6]
+      propertyPath: 'waypoints.Array.data[6]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[7]
+      propertyPath: 'waypoints.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[8]
+      propertyPath: 'waypoints.Array.data[8]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[9]
+      propertyPath: 'waypoints.Array.data[9]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608500, guid: 9658c9a89bc644bb9814ff76b4d21f70,
@@ -7643,7 +7666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 23000012514709672, guid: 2b428f431bec4ad4dbb012a63ee42ad2,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: eff5fe3891762334a8ab18025c35b803, type: 2}
     m_RemovedComponents: []
@@ -8520,7 +8543,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 9e624f42787aa5a43b81ac75f23f3a86, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: b218d35c8dc65164892039ea0aea3b4b, type: 2}
     m_RemovedComponents: []
@@ -8960,9 +8983,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758194290}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.94509804, g: 0.7647059, b: 0.43137255, a: 1}
   m_Intensity: 26
   m_Range: 8.5
@@ -9201,6 +9223,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c6a0fd8af05fa4eb3a68dbb46ce73e23, type: 3}
+  m_Resource: {fileID: 8300000, guid: c6a0fd8af05fa4eb3a68dbb46ce73e23, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -10152,6 +10175,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10212,7 +10237,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &878022072
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10226,6 +10251,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -10598,15 +10624,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11100,15 +11128,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -11304,6 +11334,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11880,9 +11912,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024485127}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.105882354, g: 0.9254902, b: 0.98039216, a: 1}
   m_Intensity: 45
   m_Range: 15.6
@@ -12128,15 +12159,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -12456,9 +12489,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058945337}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.94509804, g: 0.7647059, b: 0.43137255, a: 1}
   m_Intensity: 45
   m_Range: 10.5
@@ -13864,15 +13896,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -13990,6 +14024,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15244,57 +15280,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
+      propertyPath: alertDuration
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
+        type: 3}
       propertyPath: waypoints.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 653615802}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 2143377003}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[2]
+      propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 1962465048}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 1966441571}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[4]
+      propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[5]
+      propertyPath: 'waypoints.Array.data[5]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[6]
+      propertyPath: 'waypoints.Array.data[6]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[7]
+      propertyPath: 'waypoints.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[8]
+      propertyPath: 'waypoints.Array.data[8]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[9]
+      propertyPath: 'waypoints.Array.data[9]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608500, guid: 9658c9a89bc644bb9814ff76b4d21f70,
@@ -15622,6 +15663,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15841,15 +15884,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -15939,9 +15984,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287510663}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.94509804, g: 0.7647059, b: 0.43137255, a: 1}
   m_Intensity: 18.2
   m_Range: 9
@@ -16091,6 +16135,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 580c7eba1c4964baa92d8f8b3105ec63, type: 3}
+  m_Resource: {fileID: 8300000, guid: 580c7eba1c4964baa92d8f8b3105ec63, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.441
   m_Pitch: 1
@@ -16428,9 +16473,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321018167}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.94509804, g: 0.7647059, b: 0.43137255, a: 1}
   m_Intensity: 28.2
   m_Range: 10.791338
@@ -16609,7 +16653,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 2065855062}
   m_Follow: {fileID: 2065855060}
   m_Lens:
-    FieldOfView: 68.5
+    FieldOfView: 44
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 220
@@ -16677,7 +16721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -27}
+  m_AnchoredPosition: {x: -20, y: -19}
   m_SizeDelta: {x: 126.3305, y: 87.6372}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1347478146
@@ -17098,7 +17142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 23000012514709672, guid: 2b428f431bec4ad4dbb012a63ee42ad2,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: eff5fe3891762334a8ab18025c35b803, type: 2}
     m_RemovedComponents: []
@@ -17347,6 +17391,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17501,6 +17547,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17626,8 +17674,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23
-  m_fontSizeBase: 23
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -17642,15 +17690,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18037,15 +18087,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -18620,6 +18672,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19159,6 +19213,8 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19597,9 +19653,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655188650}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.94509804, g: 0.7647059, b: 0.43137255, a: 1}
   m_Intensity: 44.86
   m_Range: 8.4
@@ -19868,7 +19923,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1699753191
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -19882,6 +19937,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -19904,6 +19960,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -20477,8 +20535,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 6, y: -96}
-  m_SizeDelta: {x: 87.6098, y: 85.667}
+  m_AnchoredPosition: {x: 14, y: -72}
+  m_SizeDelta: {x: 197, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728403639
 MonoBehaviour:
@@ -21013,15 +21071,17 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
+  m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
+  m_EmojiFallbackSupport: 1
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -21349,6 +21409,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -22267,6 +22329,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -23020,6 +23084,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
+      propertyPath: alertDuration
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
+        type: 3}
       propertyPath: npcLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -23030,52 +23099,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1395897726}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 372727746}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[2]
+      propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 492046429}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 899867858}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[4]
+      propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[5]
+      propertyPath: 'waypoints.Array.data[5]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[6]
+      propertyPath: 'waypoints.Array.data[6]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[7]
+      propertyPath: 'waypoints.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[8]
+      propertyPath: 'waypoints.Array.data[8]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[9]
+      propertyPath: 'waypoints.Array.data[9]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608500, guid: 9658c9a89bc644bb9814ff76b4d21f70,
@@ -23235,8 +23304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13, y: -222}
-  m_SizeDelta: {x: 591.85, y: 66.6543}
+  m_AnchoredPosition: {x: 43, y: -239}
+  m_SizeDelta: {x: 778, y: 97}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1877092322
 GameObject:
@@ -23574,13 +23643,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 3.64, y: -1.84, z: 0}
-  m_LookaheadTime: 1
-  m_LookaheadSmoothing: 17
+  m_LookaheadTime: 0.34
+  m_LookaheadSmoothing: 11.5
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0
   m_VerticalDamping: 0
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenY: 0.63
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.8
@@ -24037,9 +24106,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909976004}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 48.95
   m_Range: 10
@@ -24713,6 +24781,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -24930,6 +25000,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -25706,6 +25778,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
+      propertyPath: alertDuration
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
+        type: 3}
       propertyPath: npcLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -25716,52 +25793,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1616582689}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[2]
+      propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 1287558937}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 1905610672}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[4]
+      propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[5]
+      propertyPath: 'waypoints.Array.data[5]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[6]
+      propertyPath: 'waypoints.Array.data[6]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[7]
+      propertyPath: 'waypoints.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[8]
+      propertyPath: 'waypoints.Array.data[8]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[9]
+      propertyPath: 'waypoints.Array.data[9]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608500, guid: 9658c9a89bc644bb9814ff76b4d21f70,
@@ -26231,6 +26308,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -26414,8 +26493,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064072880}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.005705964, y: 0.89867085, z: -0.43843058, w: 0.011695771}
-  m_LocalPosition: {x: 2.55601, y: 17.727291, z: 44.24772}
+  m_LocalRotation: {x: 0.006940207, y: 0.9127643, z: -0.4081327, w: 0.01552136}
+  m_LocalPosition: {x: 2.55601, y: 11.027291, z: 40.547718}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26536,6 +26615,11 @@ PrefabInstance:
       propertyPath: zoomValue
       value: 
       objectReference: {fileID: 950168449}
+    - target: {fileID: -7499273553750662677, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
+        type: 3}
+      propertyPath: secondZoom
+      value: 53
+      objectReference: {fileID: 0}
     - target: {fileID: 1139813042393271555, guid: b9ed2c8017ea640a38b45b3f5959d5a6,
         type: 3}
       propertyPath: m_Enabled
@@ -26849,7 +26933,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2081769955
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -26863,6 +26947,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -26885,6 +26970,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -27622,6 +27709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
+      propertyPath: alertDuration
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
+        type: 3}
       propertyPath: npcLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -27632,52 +27724,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[0]
+      propertyPath: 'waypoints.Array.data[0]'
       value: 
       objectReference: {fileID: 944742853}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: 'waypoints.Array.data[1]'
       value: 
       objectReference: {fileID: 1296614431}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[2]
+      propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 2134568077}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[4]
+      propertyPath: 'waypoints.Array.data[4]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[5]
+      propertyPath: 'waypoints.Array.data[5]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[6]
+      propertyPath: 'waypoints.Array.data[6]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[7]
+      propertyPath: 'waypoints.Array.data[7]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[8]
+      propertyPath: 'waypoints.Array.data[8]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2185549515478608498, guid: 9658c9a89bc644bb9814ff76b4d21f70,
         type: 3}
-      propertyPath: waypoints.Array.data[9]
+      propertyPath: 'waypoints.Array.data[9]'
       value: 
       objectReference: {fileID: 630549421}
     - target: {fileID: 2185549515478608500, guid: 9658c9a89bc644bb9814ff76b4d21f70,
@@ -27854,6 +27946,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28161,7 +28255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2111888716
 Transform:
   m_ObjectHideFlags: 0
@@ -28323,9 +28417,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117997922}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 2
-  m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.7644831, b: 0.43164828, a: 1}
   m_Intensity: 120
   m_Range: 21.5
@@ -28680,6 +28773,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28722,6 +28817,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28764,6 +28861,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28806,6 +28905,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28848,6 +28949,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28890,6 +28993,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28932,6 +29037,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28974,6 +29081,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29016,6 +29125,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29058,6 +29169,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29100,6 +29213,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29142,6 +29257,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29550,7 +29667,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &1535296912584767491
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29564,6 +29681,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -29622,7 +29740,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1538096001705426637
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29636,6 +29754,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -29733,7 +29852,7 @@ MonoBehaviour:
   windFX: {fileID: 202862655}
 --- !u!95 &1562289572163282799
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29747,6 +29866,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -29815,6 +29935,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29968,7 +30090,7 @@ MonoBehaviour:
     type: 3}
 --- !u!95 &8251770731504216294
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -29982,6 +30104,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
